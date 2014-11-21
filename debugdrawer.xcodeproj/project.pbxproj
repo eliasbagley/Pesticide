@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E26CB1208067BF78297DBF6 /* libPods-debugdrawer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A497ABC7E5B8C33E4743544 /* libPods-debugdrawer.a */; };
 		BD361B711A1F8C6D006AE819 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD361B701A1F8C6D006AE819 /* AppDelegate.swift */; };
 		BD361B731A1F8C6D006AE819 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD361B721A1F8C6D006AE819 /* ViewController.swift */; };
 		BD361B761A1F8C6D006AE819 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD361B741A1F8C6D006AE819 /* Main.storyboard */; };
@@ -26,6 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A497ABC7E5B8C33E4743544 /* libPods-debugdrawer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-debugdrawer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EE3F03714FA91F2E8A164CC /* Pods-debugdrawer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-debugdrawer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-debugdrawer/Pods-debugdrawer.debug.xcconfig"; sourceTree = "<group>"; };
 		BD361B6B1A1F8C6D006AE819 /* debugdrawer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = debugdrawer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD361B6F1A1F8C6D006AE819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD361B701A1F8C6D006AE819 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +39,8 @@
 		BD361B801A1F8C6D006AE819 /* debugdrawerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = debugdrawerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD361B851A1F8C6D006AE819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD361B861A1F8C6D006AE819 /* debugdrawerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = debugdrawerTests.swift; sourceTree = "<group>"; };
+		BD361B911A1F923C006AE819 /* Debugdrawer-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Debugdrawer-Bridging-Header.h"; sourceTree = "<group>"; };
+		E23FBB86D95DA65C266D290E /* Pods-debugdrawer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-debugdrawer.release.xcconfig"; path = "Pods/Target Support Files/Pods-debugdrawer/Pods-debugdrawer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E26CB1208067BF78297DBF6 /* libPods-debugdrawer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +62,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BA5747C8C1622A5EB115A7C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8EE3F03714FA91F2E8A164CC /* Pods-debugdrawer.debug.xcconfig */,
+				E23FBB86D95DA65C266D290E /* Pods-debugdrawer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		62CD7D1B538C88106D05A59F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A497ABC7E5B8C33E4743544 /* libPods-debugdrawer.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BD361B621A1F8C6D006AE819 = {
 			isa = PBXGroup;
 			children = (
 				BD361B6D1A1F8C6D006AE819 /* debugdrawer */,
 				BD361B831A1F8C6D006AE819 /* debugdrawerTests */,
 				BD361B6C1A1F8C6D006AE819 /* Products */,
+				0BA5747C8C1622A5EB115A7C /* Pods */,
+				62CD7D1B538C88106D05A59F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				BD361B6F1A1F8C6D006AE819 /* Info.plist */,
+				BD361B911A1F923C006AE819 /* Debugdrawer-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -119,9 +145,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD361B8A1A1F8C6D006AE819 /* Build configuration list for PBXNativeTarget "debugdrawer" */;
 			buildPhases = (
+				A22E2654921DA1A53C99D089 /* Check Pods Manifest.lock */,
 				BD361B671A1F8C6D006AE819 /* Sources */,
 				BD361B681A1F8C6D006AE819 /* Frameworks */,
 				BD361B691A1F8C6D006AE819 /* Resources */,
+				9EE5983AA9A375FE4683692B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -206,6 +234,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9EE5983AA9A375FE4683692B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-debugdrawer/Pods-debugdrawer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A22E2654921DA1A53C99D089 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BD361B671A1F8C6D006AE819 /* Sources */ = {
@@ -293,6 +354,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "debugdrawer/Debugdrawer-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -329,6 +391,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "debugdrawer/Debugdrawer-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -336,6 +399,7 @@
 		};
 		BD361B8B1A1F8C6D006AE819 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EE3F03714FA91F2E8A164CC /* Pods-debugdrawer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = debugdrawer/Info.plist;
@@ -346,6 +410,7 @@
 		};
 		BD361B8C1A1F8C6D006AE819 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E23FBB86D95DA65C266D290E /* Pods-debugdrawer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = debugdrawer/Info.plist;
@@ -407,6 +472,7 @@
 				BD361B8C1A1F8C6D006AE819 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BD361B8D1A1F8C6D006AE819 /* Build configuration list for PBXNativeTarget "debugdrawerTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +481,7 @@
 				BD361B8F1A1F8C6D006AE819 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
