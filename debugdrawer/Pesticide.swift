@@ -16,31 +16,47 @@ public enum PesticideControlType {
 
 public class Pesticide {
     
-    private struct CVWrapper {
+    private struct CV {
         static let debugVC = DebugTableController()
-        static var commands = Dictionary<String, (Array<String> -> Void)>()
+        static var commands = Dictionary<String, Array<String> -> ()>()
     }
 
     public class func log(message: String) {
         print(message)
     }
     
-    public class func addCommand(commandName: String, block: Array<String> -> Void) {
-        CVWrapper.commands[commandName] = block
+    public class func addCommand(commandName: String, block: Array<String> -> ()) {
+        CV.commands[commandName] = block
     }
     
-    public class func runFullCommand(command: String) {
+    class func runFullCommand(command: String) {
         var components = command.componentsSeparatedByString(" ")
         let name = components.removeAtIndex(0)
-        let block = CVWrapper.commands[name]
+        let block = CV.commands[name]
         block?(components)
     }
     
-    public class func addControl(name: String, type: PesticideControlType) {
+    public class func addSwitch(name: String, block: Bool -> ()) {
+        
+    }
     
+    public class func addButton(name: String, block: () -> ()) {
+        
+    }
+    
+    public class func addSlider(name: String, block: (CGFloat) -> ()) {
+        
+    }
+    
+    public class func addDropdown(name: String, options: Array<AnyObject>, block: (option: AnyObject, index: Int) -> ()) {
+        
+    }
+    
+    public class func addLabel(name: String, label: String) {
+        
     }
     
     public class func debugViewController()->UIViewController {
-        return CVWrapper.debugVC
+        return CV.debugVC
     }
 }
