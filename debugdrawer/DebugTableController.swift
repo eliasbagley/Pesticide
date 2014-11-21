@@ -8,19 +8,20 @@
 
 import UIKit
 
+class SectionInfo: NSObject {
+    var rowObjects = [AnyObject]()
+}
+
 class DebugTableController: UITableViewController {
     
-    let sectionCount = 1
-    let rowCount = 1
+    var sectionObjects = [SectionInfo]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView .registerNib(UINib(nibName: ConsoleCellIdentifier, bundle: nil), forCellReuseIdentifier: ConsoleCellIdentifier)
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        var info = SectionInfo()
+        info.rowObjects.append(["logText":"cool stuff is cool"])
+        self.sectionObjects.append(info)
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,13 +34,14 @@ class DebugTableController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return sectionCount
+        return self.sectionObjects.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return rowCount
+        let info = self.sectionObjects[section]
+        return info.rowObjects.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -57,8 +59,10 @@ class DebugTableController: UITableViewController {
     
     func configureCell(cell:UITableViewCell, indexPath : NSIndexPath) {
         if let consoleCell = cell as? ConsoleCell {
-            consoleCell.commandField.text = "Cool it worked"
-            consoleCell.consoleView.text = "Sort of"
+            let info = self.sectionObjects[indexPath.section]
+            if let rowDictionary = info.rowObjects[indexPath.row] as? Dictionary <String,String> {
+                consoleCell.consoleView.text = rowDictionary["logText"]
+            }
         }
     }
 }
