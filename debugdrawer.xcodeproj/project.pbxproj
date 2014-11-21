@@ -15,6 +15,8 @@
 		BD361B781A1F8C6D006AE819 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD361B771A1F8C6D006AE819 /* Images.xcassets */; };
 		BD361B7B1A1F8C6D006AE819 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD361B791A1F8C6D006AE819 /* LaunchScreen.xib */; };
 		BD361B871A1F8C6D006AE819 /* debugdrawerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD361B861A1F8C6D006AE819 /* debugdrawerTests.swift */; };
+		BDF2031F1A1F99C70037AB3D /* Proxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2031E1A1F99C70037AB3D /* Proxy.swift */; };
+		BDF203231A1FA24D0037AB3D /* APISessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF203221A1FA24D0037AB3D /* APISessionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		BD361B851A1F8C6D006AE819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD361B861A1F8C6D006AE819 /* debugdrawerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = debugdrawerTests.swift; sourceTree = "<group>"; };
 		BD361B911A1F923C006AE819 /* Debugdrawer-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Debugdrawer-Bridging-Header.h"; sourceTree = "<group>"; };
+		BDF2031E1A1F99C70037AB3D /* Proxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Proxy.swift; sourceTree = "<group>"; };
+		BDF203221A1FA24D0037AB3D /* APISessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APISessionManager.swift; sourceTree = "<group>"; };
 		D8773641C1EAB6B8C576455A /* libPods-debugdrawerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-debugdrawerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E23FBB86D95DA65C266D290E /* Pods-debugdrawer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-debugdrawer.release.xcconfig"; path = "Pods/Target Support Files/Pods-debugdrawer/Pods-debugdrawer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +120,8 @@
 				BD361B771A1F8C6D006AE819 /* Images.xcassets */,
 				BD361B791A1F8C6D006AE819 /* LaunchScreen.xib */,
 				BD361B6E1A1F8C6D006AE819 /* Supporting Files */,
+				BDF2031E1A1F99C70037AB3D /* Proxy.swift */,
+				BDF203221A1FA24D0037AB3D /* APISessionManager.swift */,
 			);
 			path = debugdrawer;
 			sourceTree = "<group>";
@@ -314,7 +320,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD361B731A1F8C6D006AE819 /* ViewController.swift in Sources */,
+				BDF2031F1A1F99C70037AB3D /* Proxy.swift in Sources */,
 				BD361B711A1F8C6D006AE819 /* AppDelegate.swift in Sources */,
+				BDF203231A1FA24D0037AB3D /* APISessionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

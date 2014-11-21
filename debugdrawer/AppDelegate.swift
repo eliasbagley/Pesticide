@@ -16,6 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+
+//        let sessionManager = APISessionManager(sessionConfiguration: Proxy.createSessionConfiguration())
+        let sessionManager = APISessionManager()
+        sessionManager.getTest({ () -> Void in
+            println("success!")
+        }, failure: { (task, error) -> Void in
+            println("failure!")
+        })
+
         return true
     }
 
