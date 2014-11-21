@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let window = self.window {
             window.rootViewController = rootView
         }
-        
+        self.startLogging()
         return true
     }
     
@@ -71,6 +71,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func startLogging () {
+        //TODO in live the level should be conditionally lower
+        DDLog.logLevel = .Verbose
+        DDLog.addLogger(DDTTYLogger.sharedInstance())
+        DDLog.addLogger(DDASLLogger.sharedInstance())
+        let fileLogger = DDFileLogger()
+        fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
+        fileLogger.logFileManager.maximumNumberOfLogFiles = 7
+        DDLog.addLogger(fileLogger)
+    }
 }
 

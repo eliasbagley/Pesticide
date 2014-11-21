@@ -15,13 +15,19 @@ class SectionInfo: NSObject {
 class DebugTableController: UITableViewController {
     
     var sectionObjects = [SectionInfo]()
-
+    let consoleView = UITextView(frame: CGRectMake(0, 0, 320, 200));
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView .registerNib(UINib(nibName: ConsoleCellIdentifier, bundle: nil), forCellReuseIdentifier: ConsoleCellIdentifier)
+        self.consoleView.editable = false
+        self.consoleView.backgroundColor = UIColor.darkGrayColor()
+        self.consoleView.textColor = UIColor.whiteColor()
+        self.tableView .registerNib(UINib(nibName: CommandCellIdentifier, bundle: nil), forCellReuseIdentifier: CommandCellIdentifier)
         var info = SectionInfo()
         info.rowObjects.append(["logText":"cool stuff is cool"])
         self.sectionObjects.append(info)
+        self.readCurrentLog()
+        self.tableView.tableHeaderView = self.consoleView
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,7 +51,7 @@ class DebugTableController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(ConsoleCellIdentifier, forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(CommandCellIdentifier, forIndexPath: indexPath) as UITableViewCell
         self.configureCell(cell, indexPath: indexPath)
         // Configure the cell...
 
@@ -58,12 +64,21 @@ class DebugTableController: UITableViewController {
     // MARK: - Configure Cell
     
     func configureCell(cell:UITableViewCell, indexPath : NSIndexPath) {
-        if let consoleCell = cell as? ConsoleCell {
-            let info = self.sectionObjects[indexPath.section]
-            if let rowDictionary = info.rowObjects[indexPath.row] as? Dictionary <String,String> {
-                consoleCell.consoleView.text = rowDictionary["logText"]
-            }
+        
+    }
+    
+    func readCurrentLog() {
+        logInfo("Read log")
+        let fileLogger = DDFileLogger()
+        let logFileInfo = fileLogger.currentLogFileInfo()
+        if let logData = NSData(contentsOfFile: logFileInfo.filePath) {
+            let logString = NSString(data: logData, encoding: NSUTF8StringEncoding)
+            self.consoleView.text = logString!
         }
+        let consoleLogger = PesticideLogger();
+        consoleLogger.textView = self.consoleView
+        DDLog.addLogger(consoleLogger)
+        logInfo("added log watcher")
     }
 
 }
