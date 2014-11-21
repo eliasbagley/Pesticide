@@ -80,4 +80,5 @@ class DebugTableController: UITableViewController {
         DDLog.addLogger(consoleLogger)
         logInfo("added log watcher")
     }
+
 }
