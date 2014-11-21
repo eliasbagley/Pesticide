@@ -10,5 +10,6 @@
 #define debugdrawer_Debugdrawer_Bridging_Header_h
 
 #import <AFNetworking/AFNetworking.h>
+#import <CocoaLumberjack/CocoaLumberjack.h>
 
 #endif

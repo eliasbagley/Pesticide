@@ -1,5 +1,5 @@
 //
-//  ConsoleCell.swift
+//  CommandCell.swift
 //  debugdrawer
 //
 //  Created by Abraham Hunt on 11/21/14.
@@ -8,17 +8,15 @@
 
 import UIKit
 
-let ConsoleCellIdentifier = "ConsoleCell"
+let CommandCellIdentifier = "CommandCell"
 
-class ConsoleCell: UITableViewCell {
+class CommandCell: UITableViewCell {
 
-    @IBOutlet weak var consoleView: UITextView!
     @IBOutlet weak var commandField: UITextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.commandField.attributedPlaceholder = NSAttributedString(string:"Waiting for input...", attributes: [NSForegroundColorAttributeName: UIColor.lightGrayColor()])
-        // Initialization code
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

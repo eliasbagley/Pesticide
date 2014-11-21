@@ -18,8 +18,10 @@
 		BD361B7B1A1F8C6D006AE819 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD361B791A1F8C6D006AE819 /* LaunchScreen.xib */; };
 		BD361B871A1F8C6D006AE819 /* debugdrawerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD361B861A1F8C6D006AE819 /* debugdrawerTests.swift */; };
 		D624A2E81A1FB3AB00B71EF5 /* DebugTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D624A2E71A1FB3AB00B71EF5 /* DebugTableController.swift */; };
-		D624A2EB1A1FB3B600B71EF5 /* ConsoleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D624A2E91A1FB3B600B71EF5 /* ConsoleCell.swift */; };
-		D624A2EC1A1FB3B600B71EF5 /* ConsoleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D624A2EA1A1FB3B600B71EF5 /* ConsoleCell.xib */; };
+		D624A2EB1A1FB3B600B71EF5 /* CommandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D624A2E91A1FB3B600B71EF5 /* CommandCell.swift */; };
+		D624A2EC1A1FB3B600B71EF5 /* CommandCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D624A2EA1A1FB3B600B71EF5 /* CommandCell.xib */; };
+		D624A2EE1A1FC9EE00B71EF5 /* CocoaLumberjack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D624A2ED1A1FC9EE00B71EF5 /* CocoaLumberjack.swift */; };
+		D624A2F81A1FF2CA00B71EF5 /* PesticideLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D624A2F71A1FF2CA00B71EF5 /* PesticideLogger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +53,10 @@
 		BD361B861A1F8C6D006AE819 /* debugdrawerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = debugdrawerTests.swift; sourceTree = "<group>"; };
 		BD361B911A1F923C006AE819 /* Debugdrawer-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Debugdrawer-Bridging-Header.h"; sourceTree = "<group>"; };
 		D624A2E71A1FB3AB00B71EF5 /* DebugTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugTableController.swift; sourceTree = "<group>"; };
-		D624A2E91A1FB3B600B71EF5 /* ConsoleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleCell.swift; sourceTree = "<group>"; };
-		D624A2EA1A1FB3B600B71EF5 /* ConsoleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsoleCell.xib; sourceTree = "<group>"; };
+		D624A2E91A1FB3B600B71EF5 /* CommandCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandCell.swift; sourceTree = "<group>"; };
+		D624A2EA1A1FB3B600B71EF5 /* CommandCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommandCell.xib; sourceTree = "<group>"; };
+		D624A2ED1A1FC9EE00B71EF5 /* CocoaLumberjack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaLumberjack.swift; sourceTree = "<group>"; };
+		D624A2F71A1FF2CA00B71EF5 /* PesticideLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PesticideLogger.swift; sourceTree = "<group>"; };
 		D8773641C1EAB6B8C576455A /* libPods-debugdrawerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-debugdrawerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E23FBB86D95DA65C266D290E /* Pods-debugdrawer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-debugdrawer.release.xcconfig"; path = "Pods/Target Support Files/Pods-debugdrawer/Pods-debugdrawer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,8 +104,8 @@
 		BC084C301A1F9DB100E68797 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D624A2E91A1FB3B600B71EF5 /* ConsoleCell.swift */,
-				D624A2EA1A1FB3B600B71EF5 /* ConsoleCell.xib */,
+				D624A2E91A1FB3B600B71EF5 /* CommandCell.swift */,
+				D624A2EA1A1FB3B600B71EF5 /* CommandCell.xib */,
 				BC084C311A1F9DE400E68797 /* DebugView.swift */,
 			);
 			name = Views;
@@ -130,6 +134,7 @@
 		BD361B6D1A1F8C6D006AE819 /* debugdrawer */ = {
 			isa = PBXGroup;
 			children = (
+				D624A2ED1A1FC9EE00B71EF5 /* CocoaLumberjack.swift */,
 				D624A2E71A1FB3AB00B71EF5 /* DebugTableController.swift */,
 				BC084C301A1F9DB100E68797 /* Views */,
 				BD361B701A1F8C6D006AE819 /* AppDelegate.swift */,
@@ -139,6 +144,7 @@
 				BD361B791A1F8C6D006AE819 /* LaunchScreen.xib */,
 				BD361B6E1A1F8C6D006AE819 /* Supporting Files */,
 				BC084C331A1F9FA800E68797 /* SampleViewController.swift */,
+				D624A2F71A1FF2CA00B71EF5 /* PesticideLogger.swift */,
 			);
 			path = debugdrawer;
 			sourceTree = "<group>";
@@ -256,7 +262,7 @@
 				BD361B761A1F8C6D006AE819 /* Main.storyboard in Resources */,
 				BD361B7B1A1F8C6D006AE819 /* LaunchScreen.xib in Resources */,
 				BD361B781A1F8C6D006AE819 /* Images.xcassets in Resources */,
-				D624A2EC1A1FB3B600B71EF5 /* ConsoleCell.xib in Resources */,
+				D624A2EC1A1FB3B600B71EF5 /* CommandCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,11 +344,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC084C321A1F9DE400E68797 /* DebugView.swift in Sources */,
+				D624A2EE1A1FC9EE00B71EF5 /* CocoaLumberjack.swift in Sources */,
 				BD361B731A1F8C6D006AE819 /* ViewController.swift in Sources */,
+				D624A2F81A1FF2CA00B71EF5 /* PesticideLogger.swift in Sources */,
 				D624A2E81A1FB3AB00B71EF5 /* DebugTableController.swift in Sources */,
 				BC084C341A1F9FA800E68797 /* SampleViewController.swift in Sources */,
 				BD361B711A1F8C6D006AE819 /* AppDelegate.swift in Sources */,
-				D624A2EB1A1FB3B600B71EF5 /* ConsoleCell.swift in Sources */,
+				D624A2EB1A1FB3B600B71EF5 /* CommandCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,9 +478,11 @@
 			baseConfigurationReference = 8EE3F03714FA91F2E8A164CC /* Pods-debugdrawer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = debugdrawer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -481,6 +491,7 @@
 			baseConfigurationReference = E23FBB86D95DA65C266D290E /* Pods-debugdrawer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = debugdrawer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
