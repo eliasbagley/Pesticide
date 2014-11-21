@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (topVC.isKindOfClass(DebugTableController)) {
             topVC.dismissViewControllerAnimated(true, completion: nil)
         } else {
-            let debugVC = DebugTableController()
+            let debugVC = Pesticide.debugViewController()
             topVC.presentViewController(debugVC, animated: true, completion: nil)
         }
     }
