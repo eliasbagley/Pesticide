@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		755AE74A006A11B6E4C2985F /* libPods-debugdrawerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8773641C1EAB6B8C576455A /* libPods-debugdrawerTests.a */; };
 		7E26CB1208067BF78297DBF6 /* libPods-debugdrawer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A497ABC7E5B8C33E4743544 /* libPods-debugdrawer.a */; };
+		BC084C321A1F9DE400E68797 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC084C311A1F9DE400E68797 /* DebugView.swift */; };
 		BD361B711A1F8C6D006AE819 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD361B701A1F8C6D006AE819 /* AppDelegate.swift */; };
 		BD361B731A1F8C6D006AE819 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD361B721A1F8C6D006AE819 /* ViewController.swift */; };
 		BD361B761A1F8C6D006AE819 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD361B741A1F8C6D006AE819 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		738FEBE8D704B120B7DE7616 /* Pods-debugdrawerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-debugdrawerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-debugdrawerTests/Pods-debugdrawerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8EE3F03714FA91F2E8A164CC /* Pods-debugdrawer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-debugdrawer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-debugdrawer/Pods-debugdrawer.debug.xcconfig"; sourceTree = "<group>"; };
 		A8497FBABC9059FB399DB179 /* Pods-debugdrawerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-debugdrawerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-debugdrawerTests/Pods-debugdrawerTests.release.xcconfig"; sourceTree = "<group>"; };
+		BC084C311A1F9DE400E68797 /* DebugView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		BD361B6B1A1F8C6D006AE819 /* debugdrawer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = debugdrawer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD361B6F1A1F8C6D006AE819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD361B701A1F8C6D006AE819 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BC084C301A1F9DB100E68797 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BC084C311A1F9DE400E68797 /* DebugView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		BD361B621A1F8C6D006AE819 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +120,7 @@
 		BD361B6D1A1F8C6D006AE819 /* debugdrawer */ = {
 			isa = PBXGroup;
 			children = (
+				BC084C301A1F9DB100E68797 /* Views */,
 				BD361B701A1F8C6D006AE819 /* AppDelegate.swift */,
 				BD361B721A1F8C6D006AE819 /* ViewController.swift */,
 				BD361B741A1F8C6D006AE819 /* Main.storyboard */,
@@ -313,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC084C321A1F9DE400E68797 /* DebugView.swift in Sources */,
 				BD361B731A1F8C6D006AE819 /* ViewController.swift in Sources */,
 				BD361B711A1F8C6D006AE819 /* AppDelegate.swift in Sources */,
 			);
