@@ -65,4 +65,5 @@ class DebugTableController: UITableViewController {
             }
         }
     }
+
 }

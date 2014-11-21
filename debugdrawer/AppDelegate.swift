@@ -12,18 +12,41 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var isDebugging: Bool?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        let threeFingerTap = UITapGestureRecognizer(target: self, action: Selector("threeFingerTap"))
+        threeFingerTap.numberOfTouchesRequired = 3
+        self.window?.addGestureRecognizer(threeFingerTap)
+        
         var rootView = SampleViewController()
         
-        if let window = self.window{
+        if let window = self.window {
             window.rootViewController = rootView
         }
         
         return true
+    }
+    
+    func threeFingerTap() {
+        var topVC :UIViewController = self.topViewController(self.window!.rootViewController!)
+        if (topVC.isKindOfClass(DebugTableController)) {
+            topVC.dismissViewControllerAnimated(true, completion: nil)
+        } else {
+            let debugVC = DebugTableController()
+            topVC.presentViewController(debugVC, animated: true, completion: nil)
+        }
+    }
+    
+    func topViewController(rootController :UIViewController)->UIViewController {
+        if (rootController.presentedViewController != nil) {
+            return topViewController(rootController.presentedViewController!)
+        } else {
+            return rootController;
+        }
     }
 
     func applicationWillResignActive(application: UIApplication) {
