@@ -61,4 +61,5 @@ class DebugTableController: UITableViewController {
             consoleCell.consoleView.text = "Sort of"
         }
     }
+
 }
