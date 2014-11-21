@@ -3,4 +3,5 @@ target "debugdrawer" do
 end
 
 target "debugdrawerTests" do
+    pod 'AFNetworking'
 end
