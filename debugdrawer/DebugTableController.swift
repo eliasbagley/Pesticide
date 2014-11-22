@@ -87,7 +87,9 @@ class DebugTableController: UITableViewController {
             let textInput = cell as TextFieldCell
             textInput.textField.addTarget(self, action: Selector("editingEnded:"), forControlEvents: UIControlEvents.EditingDidEnd)
         case .Label:
-            let bob = "Bob"
+            let labelCell = cell as LabelCell
+            let labelControl = rowControl as LabelControl
+            labelCell.label.text = labelControl.label
         }
     }
     

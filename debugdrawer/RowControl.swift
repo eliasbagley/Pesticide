@@ -76,7 +76,10 @@ class ButtonControl : RowControl {
 
 class LabelControl : RowControl {
     
-    init (name : String) {
+    var label :String
+    
+    init (name : String, label: String) {
+        self.label = label
         super.init(name: name, type: .Label)
     }
     
