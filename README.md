@@ -13,26 +13,34 @@ Expand the "Target Dependencies" group, and add debugdrawer
 Setup Pesticide
 
 In your app delegate, simply call
+```
 Pesticide.setWindow(myWindow)
+```
 to setup Pesticide
 
 Using Pesticide
 
 You can log to the debug drawer using
+```
 Pesticide.log("some message")
+```
 
 You can add custom controls to the drawer using any of:
 
+```
 Pesticide.addSwitch(intialValue: Bool, name: String, block: Bool -> ())
 Pesticide.addButton(name: String, block: () -> ())
 Pesticide.addSlider(initialValue: Float, name: String, block: Float -> ())
 Pesticide.addDropdown(initialValue: String, name: String, options: Dictionary<String,AnyObject>, block: (option: AnyObject) -> ())
 Pesticide.addLabel(name: String, label: String)
 Pesticide.addTextInput(name: String, block: (String) -> ())
+```
 
 The blocks are callbacks used when the value of the control is changed, allowing you to add custom functionality or run code ad hoc
 
+```
 Pesticide.addProxy(block: (NSURLSessionConfiguration?) -> ())
+```
 addProxy takes a closure that takes an NSURLSessionConfiguration? object allowing you to plug into whatever networking framework your project uses.
 the NSURLSessionConfiguration will be configured based on a host and port. The syntax for the proxy textfield is "host:port"
 e.g.
