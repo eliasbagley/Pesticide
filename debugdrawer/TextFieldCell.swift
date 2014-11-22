@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TextFieldCell: PesticideCell {
+class TextFieldCell: PesticideCell,UITextFieldDelegate {
 
     @IBOutlet weak var textField: UITextField!
     
@@ -16,6 +16,11 @@ class TextFieldCell: PesticideCell {
         super.awakeFromNib()
         // Initialization code
         textField.placeholder = "Value"
+        textField.returnKeyType = UIReturnKeyType.Go
+        textField.delegate = self
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        return textField.resignFirstResponder()
+    }
 }

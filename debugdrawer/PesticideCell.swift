@@ -10,6 +10,11 @@ class PesticideCell : UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.selectionStyle = UITableViewCellSelectionStyle.None
+    }
+    
     func setName (name: String){
         self.nameLabel.text = name
     }
