@@ -19,6 +19,7 @@ public class Pesticide {
     private struct CV {
         static let debugVC = DebugTableController()
         static var commands = Dictionary<String, Array<String> -> ()>()
+        static var window = UIWindow()
     }
 
     public class func log(message: String) {
@@ -62,5 +63,28 @@ public class Pesticide {
     
     public class func debugViewController()->UIViewController {
         return CV.debugVC
+    }
+    
+    public class func setWindow(window :UIWindow) {
+        CV.window = window
+    }
+    
+    public class func toggle() {
+        var topVC :UIViewController = topViewController(CV.window.rootViewController!)
+        if (topVC.isKindOfClass(DebugTableController)) {
+            topVC.dismissViewControllerAnimated(true, completion: nil)
+        } else {
+            topVC.presentViewController(CV.debugVC, animated: true, completion: nil)
+        }
+    }
+
+    // MARK: private functions
+    
+    private class func topViewController(rootController :UIViewController)->UIViewController {
+        if (rootController.presentedViewController != nil) {
+            return topViewController(rootController.presentedViewController!)
+        } else {
+            return rootController;
+        }
     }
 }

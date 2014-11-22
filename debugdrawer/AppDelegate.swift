@@ -18,36 +18,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
 
-        let threeFingerTap = UITapGestureRecognizer(target: self, action: Selector("threeFingerTap"))
-        threeFingerTap.numberOfTouchesRequired = 3
-        self.window?.addGestureRecognizer(threeFingerTap)
-        
         var rootView = SampleViewController()
         
         if let window = self.window {
             window.rootViewController = rootView
         }
+
+#if DEBUG
+        let threeFingerTap = UITapGestureRecognizer(target: self, action: Selector("threeFingerTap"))
+        threeFingerTap.numberOfTouchesRequired = 3
+        self.window?.addGestureRecognizer(threeFingerTap)
+
+        Pesticide.setWindow(self.window!)
+#endif
         self.startLogging()
         return true
     }
     
+#if DEBUG
     func threeFingerTap() {
-        var topVC :UIViewController = self.topViewController(self.window!.rootViewController!)
-        if (topVC.isKindOfClass(DebugTableController)) {
-            topVC.dismissViewControllerAnimated(true, completion: nil)
-        } else {
-            let debugVC = Pesticide.debugViewController()
-            topVC.presentViewController(debugVC, animated: true, completion: nil)
-        }
+        Pesticide.toggle()
     }
+#endif
     
-    func topViewController(rootController :UIViewController)->UIViewController {
-        if (rootController.presentedViewController != nil) {
-            return topViewController(rootController.presentedViewController!)
-        } else {
-            return rootController;
-        }
-    }
+    
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

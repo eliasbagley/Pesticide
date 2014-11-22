@@ -40,6 +40,8 @@ class SampleViewController : UIViewController {
                 self.label.text = text
             })
         #endif
+        
+        print("sample inited")
     }
     
     func enterButtonTouch(sender: UIButton!) {
