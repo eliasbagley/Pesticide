@@ -24,7 +24,6 @@
 		BCC48DF81A20301F00C2AB4F /* LabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC48DF61A20301F00C2AB4F /* LabelCell.swift */; };
 		BCC48DF91A20301F00C2AB4F /* LabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCC48DF71A20301F00C2AB4F /* LabelCell.xib */; };
 		BD361B711A1F8C6D006AE819 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD361B701A1F8C6D006AE819 /* AppDelegate.swift */; };
-		BD361B731A1F8C6D006AE819 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD361B721A1F8C6D006AE819 /* ViewController.swift */; };
 		BD361B761A1F8C6D006AE819 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD361B741A1F8C6D006AE819 /* Main.storyboard */; };
 		BD361B781A1F8C6D006AE819 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD361B771A1F8C6D006AE819 /* Images.xcassets */; };
 		BD361B7B1A1F8C6D006AE819 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD361B791A1F8C6D006AE819 /* LaunchScreen.xib */; };
@@ -123,7 +122,6 @@
 		BD361B6B1A1F8C6D006AE819 /* debugdrawer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = debugdrawer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD361B6F1A1F8C6D006AE819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD361B701A1F8C6D006AE819 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BD361B721A1F8C6D006AE819 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BD361B751A1F8C6D006AE819 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BD361B771A1F8C6D006AE819 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BD361B7A1A1F8C6D006AE819 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -261,7 +259,6 @@
 				D624A2E71A1FB3AB00B71EF5 /* DebugTableController.swift */,
 				BC084C301A1F9DB100E68797 /* Views */,
 				BD361B701A1F8C6D006AE819 /* AppDelegate.swift */,
-				BD361B721A1F8C6D006AE819 /* ViewController.swift */,
 				BD361B741A1F8C6D006AE819 /* Main.storyboard */,
 				BD361B771A1F8C6D006AE819 /* Images.xcassets */,
 				BD361B791A1F8C6D006AE819 /* LaunchScreen.xib */,
@@ -560,7 +557,6 @@
 				BD649D641A201D660030ECAF /* Preferences.swift in Sources */,
 				BD649D671A2025F00030ECAF /* Proxy.swift in Sources */,
 				BCC48DF81A20301F00C2AB4F /* LabelCell.swift in Sources */,
-				BD361B731A1F8C6D006AE819 /* ViewController.swift in Sources */,
 				D624A2F81A1FF2CA00B71EF5 /* PesticideLogger.swift in Sources */,
 				D624A2E81A1FB3AB00B71EF5 /* DebugTableController.swift in Sources */,
 				BC084C341A1F9FA800E68797 /* SampleViewController.swift in Sources */,
