@@ -12,12 +12,27 @@
 		BC084C321A1F9DE400E68797 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC084C311A1F9DE400E68797 /* DebugView.swift */; };
 		BC084C341A1F9FA800E68797 /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC084C331A1F9FA800E68797 /* SampleViewController.swift */; };
 		BC084C361A1FCE7600E68797 /* Pesticide.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC084C351A1FCE7600E68797 /* Pesticide.swift */; };
+		BCC48DE51A2023E300C2AB4F /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC48DE41A2023E300C2AB4F /* SwitchCell.swift */; };
+		BCC48DE71A20254000C2AB4F /* PesticideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC48DE61A20254000C2AB4F /* PesticideCell.swift */; };
+		BCC48DE91A20287800C2AB4F /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCC48DE81A20287800C2AB4F /* SwitchCell.xib */; };
+		BCC48DEC1A202D9200C2AB4F /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC48DEA1A202D9200C2AB4F /* ButtonCell.swift */; };
+		BCC48DED1A202D9200C2AB4F /* ButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCC48DEB1A202D9200C2AB4F /* ButtonCell.xib */; };
+		BCC48DF01A202E2100C2AB4F /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC48DEE1A202E2100C2AB4F /* TextFieldCell.swift */; };
+		BCC48DF11A202E2100C2AB4F /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCC48DEF1A202E2100C2AB4F /* TextFieldCell.xib */; };
+		BCC48DF41A202EB000C2AB4F /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC48DF21A202EB000C2AB4F /* SliderCell.swift */; };
+		BCC48DF51A202EB000C2AB4F /* SliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCC48DF31A202EB000C2AB4F /* SliderCell.xib */; };
+		BCC48DF81A20301F00C2AB4F /* LabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC48DF61A20301F00C2AB4F /* LabelCell.swift */; };
+		BCC48DF91A20301F00C2AB4F /* LabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCC48DF71A20301F00C2AB4F /* LabelCell.xib */; };
 		BD361B711A1F8C6D006AE819 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD361B701A1F8C6D006AE819 /* AppDelegate.swift */; };
 		BD361B731A1F8C6D006AE819 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD361B721A1F8C6D006AE819 /* ViewController.swift */; };
 		BD361B761A1F8C6D006AE819 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD361B741A1F8C6D006AE819 /* Main.storyboard */; };
 		BD361B781A1F8C6D006AE819 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD361B771A1F8C6D006AE819 /* Images.xcassets */; };
 		BD361B7B1A1F8C6D006AE819 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD361B791A1F8C6D006AE819 /* LaunchScreen.xib */; };
 		BD361B871A1F8C6D006AE819 /* debugdrawerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD361B861A1F8C6D006AE819 /* debugdrawerTests.swift */; };
+		BD649D641A201D660030ECAF /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD649D631A201D660030ECAF /* Preferences.swift */; };
+		BD649D671A2025F00030ECAF /* Proxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD649D661A2025F00030ECAF /* Proxy.swift */; };
+		BD649D691A2028210030ECAF /* BuildUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD649D681A2028210030ECAF /* BuildUtils.swift */; };
+		BD649D6D1A202FA50030ECAF /* DeviceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD649D6C1A202FA50030ECAF /* DeviceUtils.swift */; };
 		D624A2E81A1FB3AB00B71EF5 /* DebugTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D624A2E71A1FB3AB00B71EF5 /* DebugTableController.swift */; };
 		D624A2EB1A1FB3B600B71EF5 /* CommandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D624A2E91A1FB3B600B71EF5 /* CommandCell.swift */; };
 		D624A2EC1A1FB3B600B71EF5 /* CommandCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D624A2EA1A1FB3B600B71EF5 /* CommandCell.xib */; };
@@ -44,6 +59,17 @@
 		BC084C311A1F9DE400E68797 /* DebugView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		BC084C331A1F9FA800E68797 /* SampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		BC084C351A1FCE7600E68797 /* Pesticide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pesticide.swift; sourceTree = "<group>"; };
+		BCC48DE41A2023E300C2AB4F /* SwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
+		BCC48DE61A20254000C2AB4F /* PesticideCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PesticideCell.swift; sourceTree = "<group>"; };
+		BCC48DE81A20287800C2AB4F /* SwitchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
+		BCC48DEA1A202D9200C2AB4F /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
+		BCC48DEB1A202D9200C2AB4F /* ButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonCell.xib; sourceTree = "<group>"; };
+		BCC48DEE1A202E2100C2AB4F /* TextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
+		BCC48DEF1A202E2100C2AB4F /* TextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
+		BCC48DF21A202EB000C2AB4F /* SliderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
+		BCC48DF31A202EB000C2AB4F /* SliderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SliderCell.xib; sourceTree = "<group>"; };
+		BCC48DF61A20301F00C2AB4F /* LabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelCell.swift; sourceTree = "<group>"; };
+		BCC48DF71A20301F00C2AB4F /* LabelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelCell.xib; sourceTree = "<group>"; };
 		BD361B6B1A1F8C6D006AE819 /* debugdrawer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = debugdrawer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD361B6F1A1F8C6D006AE819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD361B701A1F8C6D006AE819 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +81,10 @@
 		BD361B851A1F8C6D006AE819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD361B861A1F8C6D006AE819 /* debugdrawerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = debugdrawerTests.swift; sourceTree = "<group>"; };
 		BD361B911A1F923C006AE819 /* Debugdrawer-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Debugdrawer-Bridging-Header.h"; sourceTree = "<group>"; };
+		BD649D631A201D660030ECAF /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		BD649D661A2025F00030ECAF /* Proxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Proxy.swift; sourceTree = "<group>"; };
+		BD649D681A2028210030ECAF /* BuildUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildUtils.swift; sourceTree = "<group>"; };
+		BD649D6C1A202FA50030ECAF /* DeviceUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceUtils.swift; sourceTree = "<group>"; };
 		D624A2E71A1FB3AB00B71EF5 /* DebugTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugTableController.swift; sourceTree = "<group>"; };
 		D624A2E91A1FB3B600B71EF5 /* CommandCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandCell.swift; sourceTree = "<group>"; };
 		D624A2EA1A1FB3B600B71EF5 /* CommandCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommandCell.xib; sourceTree = "<group>"; };
@@ -111,6 +141,17 @@
 				D624A2E91A1FB3B600B71EF5 /* CommandCell.swift */,
 				D624A2EA1A1FB3B600B71EF5 /* CommandCell.xib */,
 				BC084C311A1F9DE400E68797 /* DebugView.swift */,
+				BCC48DE61A20254000C2AB4F /* PesticideCell.swift */,
+				BCC48DE41A2023E300C2AB4F /* SwitchCell.swift */,
+				BCC48DE81A20287800C2AB4F /* SwitchCell.xib */,
+				BCC48DEA1A202D9200C2AB4F /* ButtonCell.swift */,
+				BCC48DEB1A202D9200C2AB4F /* ButtonCell.xib */,
+				BCC48DEE1A202E2100C2AB4F /* TextFieldCell.swift */,
+				BCC48DEF1A202E2100C2AB4F /* TextFieldCell.xib */,
+				BCC48DF21A202EB000C2AB4F /* SliderCell.swift */,
+				BCC48DF31A202EB000C2AB4F /* SliderCell.xib */,
+				BCC48DF61A20301F00C2AB4F /* LabelCell.swift */,
+				BCC48DF71A20301F00C2AB4F /* LabelCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -138,6 +179,7 @@
 		BD361B6D1A1F8C6D006AE819 /* debugdrawer */ = {
 			isa = PBXGroup;
 			children = (
+				BD649D621A201D5B0030ECAF /* Utils */,
 				D624A2ED1A1FC9EE00B71EF5 /* CocoaLumberjack.swift */,
 				D624A2E71A1FB3AB00B71EF5 /* DebugTableController.swift */,
 				BC084C301A1F9DB100E68797 /* Views */,
@@ -181,6 +223,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		BD649D621A201D5B0030ECAF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BD649D631A201D660030ECAF /* Preferences.swift */,
+				BD649D661A2025F00030ECAF /* Proxy.swift */,
+				BD649D681A2028210030ECAF /* BuildUtils.swift */,
+				BD649D6C1A202FA50030ECAF /* DeviceUtils.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -193,6 +246,8 @@
 				BD361B681A1F8C6D006AE819 /* Frameworks */,
 				BD361B691A1F8C6D006AE819 /* Resources */,
 				9EE5983AA9A375FE4683692B /* Copy Pods Resources */,
+				BD649D6A1A2028DB0030ECAF /* Copy git hash */,
+				BD649D6B1A202D320030ECAF /* Get Date */,
 			);
 			buildRules = (
 			);
@@ -266,9 +321,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD361B761A1F8C6D006AE819 /* Main.storyboard in Resources */,
+				BCC48DED1A202D9200C2AB4F /* ButtonCell.xib in Resources */,
 				BD361B7B1A1F8C6D006AE819 /* LaunchScreen.xib in Resources */,
 				BD361B781A1F8C6D006AE819 /* Images.xcassets in Resources */,
+				BCC48DF11A202E2100C2AB4F /* TextFieldCell.xib in Resources */,
 				D624A2EC1A1FB3B600B71EF5 /* CommandCell.xib in Resources */,
+				BCC48DF91A20301F00C2AB4F /* LabelCell.xib in Resources */,
+				BCC48DF51A202EB000C2AB4F /* SliderCell.xib in Resources */,
+				BCC48DE91A20287800C2AB4F /* SwitchCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +387,34 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		BD649D6A1A2028DB0030ECAF /* Copy git hash */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy git hash";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Copyright (c) 2012 Albert Tong <ahtong@gmail.com>\n#\n# Permission is hereby granted, free of charge, to any person obtaining a copy\n# of this software and associated documentation files (the \"Software\"), to deal\n# in the Software without restriction, including without limitation the rights\n# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n# copies of the Software, and to permit persons to whom the Software is furnished\n# to do so, subject to the following conditions:\n#\n# The above copyright notice and this permission notice shall be included in all\n# copies or substantial portions of the Software.\n#\n# THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n# THE SOFTWARE.\n#\n#\n# This script retrieves the first 7 characters of the commit SHA (hash).\n# Instructions:\n# Add this file to your project bundle or target.\n# Go to Project settings > target > Build Phases > Run Script.\n# Add Shell /bin/sh and a value with the bundle path to this script\n# Add \"GITHash\" as a key to your app's info plist to compile.\n# Reference the property list with the \"GITHash\" key to obtain the git hash value.\n\nINFOPLISTPATH=\"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}.app/Info.plist\"\n\n# Location of PlistBuddy\nPLISTBUDDY=\"/usr/libexec/PlistBuddy\"\n\n# Get the current git commmit hash (first 7 characters of the SHA)\nGITREVSHA=$(git --git-dir=\"${PROJECT_DIR}/.git\" --work-tree=\"${PROJECT_DIR}\" rev-parse --short HEAD)\n\necho \"GIT SHA = ${GITREVSHA}\"\necho \"INFOPLISTPATH = ${INFOPLISTPATH}\"\n\n# Set the Git hash in the info plist for reference\n$PLISTBUDDY -c \"Set :GITHash $GITREVSHA\" \"${INFOPLISTPATH}\"";
+		};
+		BD649D6B1A202D320030ECAF /* Get Date */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Get Date";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "infoplist=\"$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH\"\nbuilddate=`date`\n/usr/libexec/PlistBuddy -c \"Set :BuildDateKey $builddate\" ${infoplist}";
+		};
 		FDA443B2A7DE87856A81DFCA /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -349,15 +437,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD649D691A2028210030ECAF /* BuildUtils.swift in Sources */,
+				BCC48DE71A20254000C2AB4F /* PesticideCell.swift in Sources */,
 				D624A2FA1A200C8B00B71EF5 /* RowControl.swift in Sources */,
+				BCC48DEC1A202D9200C2AB4F /* ButtonCell.swift in Sources */,
 				BC084C321A1F9DE400E68797 /* DebugView.swift in Sources */,
+				BCC48DF41A202EB000C2AB4F /* SliderCell.swift in Sources */,
 				D624A2EE1A1FC9EE00B71EF5 /* CocoaLumberjack.swift in Sources */,
+				BD649D641A201D660030ECAF /* Preferences.swift in Sources */,
+				BD649D671A2025F00030ECAF /* Proxy.swift in Sources */,
+				BCC48DF81A20301F00C2AB4F /* LabelCell.swift in Sources */,
 				BD361B731A1F8C6D006AE819 /* ViewController.swift in Sources */,
 				D624A2F81A1FF2CA00B71EF5 /* PesticideLogger.swift in Sources */,
 				D624A2E81A1FB3AB00B71EF5 /* DebugTableController.swift in Sources */,
 				BC084C341A1F9FA800E68797 /* SampleViewController.swift in Sources */,
+				BCC48DF01A202E2100C2AB4F /* TextFieldCell.swift in Sources */,
 				BC084C361A1FCE7600E68797 /* Pesticide.swift in Sources */,
+				BD649D6D1A202FA50030ECAF /* DeviceUtils.swift in Sources */,
 				BD361B711A1F8C6D006AE819 /* AppDelegate.swift in Sources */,
+				BCC48DE51A2023E300C2AB4F /* SwitchCell.swift in Sources */,
 				D624A2EB1A1FB3B600B71EF5 /* CommandCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
