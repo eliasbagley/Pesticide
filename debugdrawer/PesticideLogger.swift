@@ -27,7 +27,8 @@ class PesticideLogger: DDAbstractLogger {
                         currentText = currentText + logString
                         logString = currentText
                     }
-                    self.textView!.text = logString
+                    self.textView!.text = logString + "\n"
+                    self.textView?.scrollRangeToVisible(NSMakeRange(logString.utf16Count - 1, 1))
                 });
             }
         }
