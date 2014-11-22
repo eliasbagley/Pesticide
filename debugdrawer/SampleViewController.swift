@@ -27,7 +27,18 @@ class SampleViewController : UIViewController {
         self.enterButton.addTarget(self, action: Selector("enterButtonTouch:"), forControlEvents: .TouchUpInside)
         
         #if DEBUG
-
+            Pesticide.addButton("crash", { () in
+                assert(false, "SOME CRASH AHHHH!!!!")
+            })
+            
+            Pesticide.addSlider("alpha", block: { (value :CGFloat) in
+                let currentColor = self.view.backgroundColor
+                self.view.backgroundColor = currentColor?.colorWithAlphaComponent(value)
+            })
+            
+            Pesticide.addTextInput("auto layout", block: { (text: String) in
+                self.label.text = text
+            })
         #endif
     }
     
