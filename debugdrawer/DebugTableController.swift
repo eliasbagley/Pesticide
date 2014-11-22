@@ -50,17 +50,43 @@ class DebugTableController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(CommandCellIdentifier, forIndexPath: indexPath) as UITableViewCell
+        let sectionInfo = self.sectionObjects[indexPath.section]
+        let rowControl = sectionInfo.rowObjects[indexPath.row]
+        var identifier = rowControl.type
+        if  identifier == .DropDown {
+            identifier = .TextInput
+        }
+        let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(identifier.rawValue, forIndexPath: indexPath) as UITableViewCell
         self.configureCell(cell, indexPath: indexPath)
-        // Configure the cell...
-
         return cell
     }
     
     // MARK: - Configure Cell
     
     func configureCell(cell:UITableViewCell, indexPath : NSIndexPath) {
-        
+        let sectionInfo = self.sectionObjects[indexPath.section]
+        let rowControl = sectionInfo.rowObjects[indexPath.row]
+        let pesticideCell = cell as PesticideCell
+        pesticideCell.setName(rowControl.name)
+        switch rowControl.type {
+        case .Switch:
+            let switchCell = cell as SwitchCell
+            switchCell.switchControl.addTarget(self, action: Selector("switchChanged"), forControlEvents: UIControlEvents.ValueChanged)
+        case .Slider:
+            let sliderCell = cell as SliderCell
+            sliderCell.slider.addTarget(self, action: Selector("sliderChanged"), forControlEvents: UIControlEvents.ValueChanged)
+        case .Button:
+            let buttonCell = cell as ButtonCell
+            buttonCell.button.addTarget(self, action: Selector("buttonTapped"), forControlEvents: UIControlEvents.TouchUpInside)
+        case .DropDown:
+            let dropDown = cell as TextFieldCell
+            dropDown.textField.addTarget(self, action: Selector("editingEnded"), forControlEvents: UIControlEvents.EditingDidEnd)
+        case .TextInput:
+            let textInput = cell as TextFieldCell
+            textInput.textField.addTarget(self, action: Selector("editingEnded"), forControlEvents: UIControlEvents.EditingDidEnd)
+        case .Label:
+            let bob = "Bob"
+        }
     }
     
     func readCurrentLog() {

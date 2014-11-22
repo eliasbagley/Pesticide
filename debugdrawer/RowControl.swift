@@ -8,13 +8,13 @@
 
 import UIKit
 
-enum ControlType {
-    case Switch
-    case Slider
-    case Button
-    case DropDown
-    case Label
-    case TextInput
+enum ControlType : String {
+    case Switch = "SwitchCell"
+    case Slider = "SliderCell"
+    case Button = "ButtonCell"
+    case DropDown = "DropDownCell"
+    case Label = "LabelCell"
+    case TextInput = "TextFieldCell"
 }
 
 class RowControl: NSObject {

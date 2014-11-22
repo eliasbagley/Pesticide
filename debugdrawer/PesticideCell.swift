@@ -7,5 +7,11 @@
 //
 
 class PesticideCell : UITableViewCell {
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    func setName (name: String){
+        self.nameLabel.text = name
+    }
 
 }
