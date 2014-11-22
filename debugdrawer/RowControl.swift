@@ -21,7 +21,6 @@ class RowControl: NSObject {
     
     var name : String
     var type : ControlType
-    
     init (name : String, type : ControlType) {
         self.name = name
         self.type = type
@@ -32,21 +31,32 @@ class RowControl: NSObject {
 class SwitchControl : RowControl {
     
     var block : Bool -> ()
+    var value = false
     
     init (name : String, block: Bool -> ()) {
         self.block = block
         super.init(name: name, type: .Switch)
     }
+    
+    func executeBlock (switchOn : Bool) {
+        self.block(switchOn)
+    }
 }
 
 class SliderControl : RowControl {
     
-    var block : CGFloat -> ()
-    
-    init (name : String, block: CGFloat -> ()) {
+    var block : Float -> ()
+    var value = 0.0
+
+    init (name : String, block: Float -> ()) {
         self.block = block
         super.init(name: name, type: .Slider)
     }
+    
+    func executeBlock (sliderValue : Float) {
+        self.block(sliderValue)
+    }
+
 }
 
 class ButtonControl : RowControl {
@@ -57,18 +67,11 @@ class ButtonControl : RowControl {
         self.block = block
         super.init(name: name, type: .Button)
     }
-}
-
-class DropDownControl : RowControl {
     
-    var options : Array<AnyObject>
-    var block : (option: AnyObject, index: Int) -> ()
-    
-    init (name : String, options: Array<AnyObject>, block : (option: AnyObject, index: Int) -> ()) {
-        self.block = block
-        self.options = options
-        super.init(name: name, type: .DropDown)
+    func executeBlock () {
+        self.block()
     }
+
 }
 
 class LabelControl : RowControl {
@@ -81,11 +84,32 @@ class LabelControl : RowControl {
 
 class TextInputControl : RowControl {
     
-    var block : (input: String) -> ()
+    var block : String -> ()
+    var value = ""
     
     init (name : String, block: (String) -> ()) {
         self.block = block
         super.init(name: name, type: .TextInput)
     }
+    
+    init (name : String, type:ControlType,  block: (String) -> ()) {
+        self.block = block
+        super.init(name: name, type: type)
+    }
+    
+    func executeBlock (input: String) {
+        self.block(input)
+    }
+
+}
+
+class DropDownControl : TextInputControl {
+    
+    var options : Array<AnyObject>
+    init (name : String, options: Array<String>, block : (option: String) -> ()) {
+        self.options = options
+        super.init(name: name, type: .DropDown, block: block)
+    }
+    
 }
 
