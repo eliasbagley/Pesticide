@@ -25,6 +25,10 @@ class SampleViewController : UIViewController {
         self.setupView()
         
         self.enterButton.addTarget(self, action: Selector("enterButtonTouch:"), forControlEvents: .TouchUpInside)
+        
+        #if DEBUG
+
+        #endif
     }
     
     func enterButtonTouch(sender: UIButton!) {
