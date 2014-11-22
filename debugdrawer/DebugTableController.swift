@@ -73,19 +73,19 @@ class DebugTableController: UITableViewController {
         switch rowControl.type {
         case .Switch:
             let switchCell = cell as SwitchCell
-            switchCell.switchControl.addTarget(self, action: Selector("switchChanged"), forControlEvents: UIControlEvents.ValueChanged)
+            switchCell.switchControl.addTarget(self, action: Selector("switchChanged:"), forControlEvents: UIControlEvents.ValueChanged)
         case .Slider:
             let sliderCell = cell as SliderCell
-            sliderCell.slider.addTarget(self, action: Selector("sliderChanged"), forControlEvents: UIControlEvents.ValueChanged)
+            sliderCell.slider.addTarget(self, action: Selector("sliderChanged:"), forControlEvents: UIControlEvents.ValueChanged)
         case .Button:
             let buttonCell = cell as ButtonCell
-            buttonCell.button.addTarget(self, action: Selector("buttonTapped"), forControlEvents: UIControlEvents.TouchUpInside)
+            buttonCell.button.addTarget(self, action: Selector("buttonTapped:"), forControlEvents: UIControlEvents.TouchUpInside)
         case .DropDown:
             let dropDown = cell as TextFieldCell
-            dropDown.textField.addTarget(self, action: Selector("editingEnded"), forControlEvents: UIControlEvents.EditingDidEnd)
+            dropDown.textField.addTarget(self, action: Selector("editingEnded:"), forControlEvents: UIControlEvents.EditingDidEnd)
         case .TextInput:
             let textInput = cell as TextFieldCell
-            textInput.textField.addTarget(self, action: Selector("editingEnded"), forControlEvents: UIControlEvents.EditingDidEnd)
+            textInput.textField.addTarget(self, action: Selector("editingEnded:"), forControlEvents: UIControlEvents.EditingDidEnd)
         case .Label:
             let bob = "Bob"
         }
