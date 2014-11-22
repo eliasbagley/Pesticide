@@ -1,4 +1,4 @@
-debug-drawer-ios
+Pesticide
 ================
 
 Importing target with Git submodule
