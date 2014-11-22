@@ -9,12 +9,12 @@
 import UIKit
 
 class SectionInfo: NSObject {
-    var rowObjects = [AnyObject]()
+    var rowObjects = Array<RowControl>()
 }
 
 class DebugTableController: UITableViewController {
     
-    var sectionObjects = [SectionInfo]()
+    var sectionObjects = Array<SectionInfo>()
     let consoleView = UITextView(frame: CGRectMake(0, 0, 320, 200));
     
     override func viewDidLoad() {
@@ -24,7 +24,6 @@ class DebugTableController: UITableViewController {
         self.consoleView.textColor = UIColor.whiteColor()
         self.tableView .registerNib(UINib(nibName: CommandCellIdentifier, bundle: nil), forCellReuseIdentifier: CommandCellIdentifier)
         var info = SectionInfo()
-        info.rowObjects.append(["logText":"cool stuff is cool"])
         self.sectionObjects.append(info)
         self.readCurrentLog()
         self.tableView.tableHeaderView = self.consoleView
@@ -81,4 +80,8 @@ class DebugTableController: UITableViewController {
         logInfo("added log watcher")
     }
 
+    func addRowControl(rowControl : RowControl) {
+        self.sectionObjects[0].rowObjects.append(rowControl)
+        self.tableView.reloadData()
+    }
 }

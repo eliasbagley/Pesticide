@@ -24,6 +24,7 @@
 		D624A2EC1A1FB3B600B71EF5 /* CommandCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D624A2EA1A1FB3B600B71EF5 /* CommandCell.xib */; };
 		D624A2EE1A1FC9EE00B71EF5 /* CocoaLumberjack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D624A2ED1A1FC9EE00B71EF5 /* CocoaLumberjack.swift */; };
 		D624A2F81A1FF2CA00B71EF5 /* PesticideLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D624A2F71A1FF2CA00B71EF5 /* PesticideLogger.swift */; };
+		D624A2FA1A200C8B00B71EF5 /* RowControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D624A2F91A200C8B00B71EF5 /* RowControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		D624A2EA1A1FB3B600B71EF5 /* CommandCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommandCell.xib; sourceTree = "<group>"; };
 		D624A2ED1A1FC9EE00B71EF5 /* CocoaLumberjack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaLumberjack.swift; sourceTree = "<group>"; };
 		D624A2F71A1FF2CA00B71EF5 /* PesticideLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PesticideLogger.swift; sourceTree = "<group>"; };
+		D624A2F91A200C8B00B71EF5 /* RowControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowControl.swift; sourceTree = "<group>"; };
 		D8773641C1EAB6B8C576455A /* libPods-debugdrawerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-debugdrawerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E23FBB86D95DA65C266D290E /* Pods-debugdrawer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-debugdrawer.release.xcconfig"; path = "Pods/Target Support Files/Pods-debugdrawer/Pods-debugdrawer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,6 +153,7 @@
 				BC084C331A1F9FA800E68797 /* SampleViewController.swift */,
 				D624A2F71A1FF2CA00B71EF5 /* PesticideLogger.swift */,
 				BC084C351A1FCE7600E68797 /* Pesticide.swift */,
+				D624A2F91A200C8B00B71EF5 /* RowControl.swift */,
 			);
 			path = debugdrawer;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D624A2FA1A200C8B00B71EF5 /* RowControl.swift in Sources */,
 				BC084C321A1F9DE400E68797 /* DebugView.swift in Sources */,
 				D624A2EE1A1FC9EE00B71EF5 /* CocoaLumberjack.swift in Sources */,
 				BD649D641A201D660030ECAF /* Preferences.swift in Sources */,
@@ -445,6 +449,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "debugdrawer/Debugdrawer-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
