@@ -4,7 +4,14 @@ Pesticide
 Pesticide is a  debugging framework for iOS which allows developers to use build in and custom debug controls at runtime. Pesticide was inspired by the [Debug Drawer](https://github.com/JakeWharton/u2020) for Android.
 
 ## Features
+- [x] In app debug menu
 - [x] App level HTTP proxy configuration
+- [x] Logger console
+- [x] Crosshair alignment tool
+- [x] View all touches tool
+- [x] View hierarchy analysis tool
+- [x] Adding custom controls to debug menu
+- [x] Build and Device information
 
 ## Requirements
 
@@ -26,7 +33,7 @@ _Due to the current lack of [proper infrastructure](http://cocoapods.org) for Sw
 1. Add pesticide as a [submodule](http://git-scm.com/docs/git-submodule) by opening the Terminal, `cd`-ing into your top-level project directory, and entering the command `git submodule add https://github.com/eliasbagley/Pesticide.git`
 2. Open the `debug-drawer` folder, and drag `debugdrawer.xcodeproj` into the file navigator of your app project.
 3. In Xcode, navigate to the target configuration window by clicking on the blue project icon, and selecting the application target under the "Targets" heading in the sidebar.
-4. Ensure that the deployment target of pesticide.xcodeproj matches that of the application target.
+4. Ensure that the deployment target of debugdrawer.xcodeproj matches that of the application target.
 5. In the tab bar at the top of that window, open the "Build Phases" panel.
 6. Expand the "Target Dependencies" group, and add debug-drawer
 
