@@ -46,3 +46,30 @@ the NSURLSessionConfiguration will be configured based on a host and port. The s
 e.g.
 111.11.11.1:8888
 
+You can also add more customized functionality using
+```
+Pesticide.addCommand(commandName: String, block: Array<String> -> ())
+```
+the block takes an array of words used in the command following the commandName. e.g.
+```
+Pesticide.addCommand("stab", block: { (components: Array<String>) in
+                if components.count < 1 {
+                    return;
+                }
+                if let times = components[0].toInt() {
+                    for count in 0..<times {
+                        Pesticide.log("die, die, die")
+                    }
+                }
+            })
+```
+then, in the textfield, you can run:
+```
+stab 2
+```
+to get the output:
+
+die, die, die
+die, die, die
+
+in the live view of the pesticide log
