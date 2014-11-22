@@ -30,7 +30,7 @@ class SampleViewController : UIViewController {
         #if DEBUG
             Pesticide.addCommand("log", block: { (components: Array<String>) in
                 if components.count < 1 {
-                    return;
+                    return
                 }
                 if let times = components[0].toInt() {
                     for count in 0..<times {
@@ -41,7 +41,7 @@ class SampleViewController : UIViewController {
             
             Pesticide.addCommand("stab", block: { (components: Array<String>) in
                 if components.count < 1 {
-                    return;
+                    return
                 }
                 if let times = components[0].toInt() {
                     for count in 0..<times {

@@ -50,16 +50,16 @@ public class Pesticide {
         block?(components)
     }
     
-    public class func addSwitch(intialValue: Bool, name: String, block: Bool -> ()) {
-        CV.debugVC.addRowControl(SwitchControl(intialValue: intialValue, name: name, block: block))
+    public class func addSwitch(initialValue: Bool, name: String, block: Bool -> ()) {
+        CV.debugVC.addRowControl(SwitchControl(initialValue: initialValue, name: name, block: block))
     }
     
     public class func addButton(name: String, block: () -> ()) {
         CV.debugVC.addRowControl(ButtonControl(name: name, block: block))
     }
     
-    public class func addSlider(intialValue: Float, name: String, block: Float -> ()) {
-        CV.debugVC.addRowControl(SliderControl(intialValue: intialValue, name: name, block: block))
+    public class func addSlider(initialValue: Float, name: String, block: Float -> ()) {
+        CV.debugVC.addRowControl(SliderControl(initialValue: initialValue, name: name, block: block))
     }
     
     public class func addDropdown(initialValue: String, name: String, options: Dictionary<String,AnyObject>, block: (option: AnyObject) -> ()) {
@@ -162,7 +162,7 @@ public class Pesticide {
         if (rootController.presentedViewController != nil) {
             return topViewController(rootController.presentedViewController!)
         } else {
-            return rootController;
+            return rootController
         }
     }
     
