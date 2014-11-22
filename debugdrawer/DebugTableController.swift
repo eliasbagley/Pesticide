@@ -12,16 +12,21 @@ class SectionInfo: NSObject {
     var rowObjects = Array<RowControl>()
 }
 
-class DebugTableController: UITableViewController {
+class DebugTableController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var sectionObjects = [SectionInfo()]
+    let dropDownPicker = UIPickerView()
     let consoleView = UITextView(frame: CGRectMake(0, 0, 320, 200));
+    var currentField : UITextField?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.dropDownPicker.delegate = self
+        self.dropDownPicker.dataSource = self
         self.consoleView.editable = false
         self.consoleView.backgroundColor = UIColor.darkGrayColor()
         self.consoleView.textColor = UIColor.whiteColor()
+        self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.Interactive
         let cellIds : Array<ControlType> = [.Switch,.Slider,.Button,.TextInput,.Label]
         for type in cellIds {
             self.tableView.registerNib(UINib(nibName: type.rawValue, bundle: nil), forCellReuseIdentifier:type.rawValue)
@@ -31,6 +36,11 @@ class DebugTableController: UITableViewController {
         self.tableView.tableHeaderView = self.consoleView
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.consoleView.scrollRangeToVisible(NSMakeRange(self.consoleView.text.utf16Count - 1, 1))
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -74,18 +84,29 @@ class DebugTableController: UITableViewController {
         case .Switch:
             let switchCell = cell as SwitchCell
             switchCell.switchControl.addTarget(self, action: Selector("switchChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+            let switchControl = rowControl as SwitchControl
+            switchCell.switchControl.on = switchControl.value
         case .Slider:
             let sliderCell = cell as SliderCell
             sliderCell.slider.addTarget(self, action: Selector("sliderChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+            let sliderControl = rowControl as SliderControl
+            sliderCell.slider.value = sliderControl.value
         case .Button:
             let buttonCell = cell as ButtonCell
             buttonCell.button.addTarget(self, action: Selector("buttonTapped:"), forControlEvents: UIControlEvents.TouchUpInside)
         case .DropDown:
             let dropDown = cell as TextFieldCell
             dropDown.textField.addTarget(self, action: Selector("editingEnded:"), forControlEvents: UIControlEvents.EditingDidEnd)
+            dropDown.textField.addTarget(self, action: Selector("editingBegan:"), forControlEvents: UIControlEvents.EditingDidBegin)
+            dropDown.textField.inputView = self.dropDownPicker
+            let dropDownControl = rowControl as DropDownControl
+            dropDown.textField.text = dropDownControl.value
         case .TextInput:
             let textInput = cell as TextFieldCell
             textInput.textField.addTarget(self, action: Selector("editingEnded:"), forControlEvents: UIControlEvents.EditingDidEnd)
+            textInput.textField.inputView = nil
+            let textInputControl = rowControl as TextInputControl
+            textInput.textField.text = textInputControl.value
         case .Label:
             let labelCell = cell as LabelCell
             let labelControl = rowControl as LabelControl
@@ -111,6 +132,8 @@ class DebugTableController: UITableViewController {
         self.sectionObjects[0].rowObjects.append(rowControl)
         self.tableView.reloadData()
     }
+    
+    // MARK: - Actions
     
     func switchChanged(sender: UISwitch) {
         if let indexPath = self.indexPathForCellSubview(sender) {
@@ -139,10 +162,17 @@ class DebugTableController: UITableViewController {
         }
     }
     
+    func editingBegan(sender: UITextField) {
+        self.currentField = sender
+    }
+    
     func editingEnded(sender: UITextField) {
         if let indexPath = self.indexPathForCellSubview(sender) {
             let sectionInfo = self.sectionObjects[indexPath.section]
             if let control = sectionInfo.rowObjects[indexPath.row] as? TextInputControl {
+                control.executeBlock(sender.text)
+                return
+            } else if let control = sectionInfo.rowObjects[indexPath.row] as? DropDownControl {
                 control.executeBlock(sender.text)
             }
         }
@@ -151,5 +181,43 @@ class DebugTableController: UITableViewController {
     func indexPathForCellSubview(subview: UIView) -> NSIndexPath? {
         let aPoint = self.tableView.convertPoint(CGPointZero, fromView: subview)
         return self.tableView.indexPathForRowAtPoint(aPoint)
+    }
+    
+    func controlForCellSubview(cellView : UIView) -> RowControl? {
+        if let indexPath = self.indexPathForCellSubview(cellView) {
+            let sectionInfo = self.sectionObjects[indexPath.section]
+            return sectionInfo.rowObjects[indexPath.row]
+        }
+        return nil
+    }
+
+    // MARK: - Picker view data source and delegate
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if  self.currentField == nil {
+            return 0
+        }
+        if let control = self.controlForCellSubview(self.currentField!) as? DropDownControl {
+            return control.options.count
+        }
+        return 0
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.currentField?.text = self.pickerView(pickerView, titleForRow: row, forComponent: component)
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        if  self.currentField == nil {
+            return "oops"
+        }
+        if let control = self.controlForCellSubview(self.currentField!) as? DropDownControl {
+            return control.optionStrings[row]
+        }
+        return "oops"
     }
 }

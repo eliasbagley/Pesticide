@@ -55,7 +55,7 @@ public class Pesticide {
         CV.debugVC.addRowControl(SliderControl(name: name, block: block))
     }
     
-    public class func addDropdown(name: String, options: Array<String>, block: (option: String) -> ()) {
+    public class func addDropdown(name: String, options: Dictionary<String,AnyObject>, block: (option: AnyObject) -> ()) {
         CV.debugVC.addRowControl(DropDownControl(name: name, options:options, block: block))
     }
     
