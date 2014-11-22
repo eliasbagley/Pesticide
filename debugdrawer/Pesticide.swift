@@ -20,6 +20,7 @@ public class Pesticide {
         static let debugVC = DebugTableController()
         static var commands = Dictionary<String, Array<String> -> ()>()
         static var window = UIWindow()
+        static var isSetup = false
     }
 
     public class func log(message: String) {
@@ -54,7 +55,7 @@ public class Pesticide {
     }
     
     public class func addLabel(name: String, label: String) {
-        CV.debugVC.addRowControl(LabelControl(name: name))
+        CV.debugVC.addRowControl(LabelControl(name: name, label: label))
     }
     
     public class func addTextInput(name: String, block: (String) -> ()) {
@@ -66,6 +67,10 @@ public class Pesticide {
     }
     
     public class func setWindow(window :UIWindow) {
+        if (!CV.isSetup) {
+            Pesticide.setup()
+            
+        }
         CV.window = window
     }
     
@@ -80,11 +85,32 @@ public class Pesticide {
 
     // MARK: private functions
     
+    private class func setup() {
+        Pesticide.startLogging()
+        
+        Pesticide.addLabel("date:", label: BuildUtils.getDateString())
+        Pesticide.addLabel("version:", label: BuildUtils.getVersionString())
+        Pesticide.addLabel("build:", label: BuildUtils.getBuildNumberString())
+        Pesticide.addLabel("hash:", label: BuildUtils.getGitHash())
+        
+        CV.isSetup = true
+    }
+    
     private class func topViewController(rootController :UIViewController)->UIViewController {
         if (rootController.presentedViewController != nil) {
             return topViewController(rootController.presentedViewController!)
         } else {
             return rootController;
         }
+    }
+    
+    private class func startLogging () {
+        DDLog.logLevel = .Verbose
+        DDLog.addLogger(DDTTYLogger.sharedInstance())
+        DDLog.addLogger(DDASLLogger.sharedInstance())
+        let fileLogger = DDFileLogger()
+        fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
+        fileLogger.logFileManager.maximumNumberOfLogFiles = 7
+        DDLog.addLogger(fileLogger)
     }
 }
