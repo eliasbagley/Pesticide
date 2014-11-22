@@ -15,6 +15,7 @@ class PesticideLogger: DDAbstractLogger {
     override init() {
         dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss:SSS"
+        super.init()
     }
     
     override func logMessage(logMessage: DDLogMessage!) {

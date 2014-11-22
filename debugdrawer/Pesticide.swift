@@ -37,23 +37,27 @@ public class Pesticide {
     }
     
     public class func addSwitch(name: String, block: Bool -> ()) {
-        
+        CV.debugVC.addRowControl(SwitchControl(name: name, block: block))
     }
     
     public class func addButton(name: String, block: () -> ()) {
-        
+        CV.debugVC.addRowControl(ButtonControl(name: name, block: block))
     }
     
     public class func addSlider(name: String, block: (CGFloat) -> ()) {
-        
+        CV.debugVC.addRowControl(SliderControl(name: name, block: block))
     }
     
     public class func addDropdown(name: String, options: Array<AnyObject>, block: (option: AnyObject, index: Int) -> ()) {
-        
+        CV.debugVC.addRowControl(DropDownControl(name: name, options:options, block: block))
     }
     
     public class func addLabel(name: String, label: String) {
-        
+        CV.debugVC.addRowControl(LabelControl(name: name))
+    }
+    
+    public class func addTextInput(name: String, block: (String) -> ()) {
+        CV.debugVC.addRowControl(TextInputControl(name: name, block: block))
     }
     
     public class func debugViewController()->UIViewController {
