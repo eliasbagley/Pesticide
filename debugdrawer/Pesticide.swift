@@ -22,6 +22,7 @@ public class Pesticide {
         static var window = UIWindow()
         static var isSetup = false
         static var viewInspector: ViewInspector?
+        static var hasCommandPrompt = false
     }
 
     public class func log(message: String) {
@@ -29,6 +30,15 @@ public class Pesticide {
     }
     
     public class func addCommand(commandName: String, block: Array<String> -> ()) {
+        if !CV.hasCommandPrompt {
+            self.addTextInput("Pest Commands", block: {(command: String) in
+                if command.utf16Count < 1 {
+                    return
+                }
+                self.runFullCommand(command)
+            })
+            CV.hasCommandPrompt = true
+        }
         CV.commands[commandName] = block
     }
     

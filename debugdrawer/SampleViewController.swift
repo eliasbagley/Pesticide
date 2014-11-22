@@ -27,6 +27,28 @@ class SampleViewController : UIViewController {
         self.enterButton.addTarget(self, action: Selector("enterButtonTouch:"), forControlEvents: .TouchUpInside)
         
         #if DEBUG
+            Pesticide.addCommand("log", block: { (components: Array<String>) in
+                if components.count < 1 {
+                    return;
+                }
+                if let times = components[0].toInt() {
+                    for count in 0..<times {
+                        Pesticide.log("did it \(count)")
+                    }
+                }
+            })
+            
+            Pesticide.addCommand("stab", block: { (components: Array<String>) in
+                if components.count < 1 {
+                    return;
+                }
+                if let times = components[0].toInt() {
+                    for count in 0..<times {
+                        Pesticide.log("die, die, die")
+                    }
+                }
+            })
+            
             Pesticide.addButton("crash", { () in
                 assert(false, "SOME CRASH AHHHH!!!!")
             })
