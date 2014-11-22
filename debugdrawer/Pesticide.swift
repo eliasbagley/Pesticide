@@ -14,6 +14,10 @@ public enum PesticideControlType {
     case Label
 }
 
+public protocol PesticideDelegate: class {
+    func didFinishSettingProxy(config :NSURLSessionConfiguration?)
+}
+
 public class Pesticide {
     
     private struct CV {
@@ -21,6 +25,7 @@ public class Pesticide {
         static var commands = Dictionary<String, Array<String> -> ()>()
         static var window = UIWindow()
         static var isSetup = false
+        static var delegate = PesticideDelegate?()
     }
 
     public class func log(message: String) {
@@ -66,14 +71,6 @@ public class Pesticide {
         return CV.debugVC
     }
     
-    public class func setWindow(window :UIWindow) {
-        if (!CV.isSetup) {
-            Pesticide.setup()
-            
-        }
-        CV.window = window
-    }
-    
     public class func toggle() {
         var topVC :UIViewController = topViewController(CV.window.rootViewController!)
         if (topVC.isKindOfClass(DebugTableController)) {
@@ -82,8 +79,29 @@ public class Pesticide {
             topVC.presentViewController(CV.debugVC, animated: true, completion: nil)
         }
     }
+    
+    
+    
+    
+    
+// MARK: setter functions
+    
+    public class func setWindow(window :UIWindow) {
+        if (!CV.isSetup) {
+            Pesticide.setup()
+        }
+        CV.window = window
+    }
+    
+    public class func setDelegate(delegate :PesticideDelegate?) {
+        CV.delegate = delegate
+    }
 
-    // MARK: private functions
+    
+    
+    
+    
+// MARK: private functions
     
     private class func setup() {
         Pesticide.startLogging()
@@ -92,6 +110,11 @@ public class Pesticide {
         Pesticide.addLabel("version:", label: BuildUtils.getVersionString())
         Pesticide.addLabel("build:", label: BuildUtils.getBuildNumberString())
         Pesticide.addLabel("hash:", label: BuildUtils.getGitHash())
+        
+        Pesticide.addTextInput("proxy", block: { (hostAndPort: String) in
+            let config = Proxy.createSessionConfiguration(hostAndPort)
+            CV.delegate?.didFinishSettingProxy(config)
+        })
         
         CV.isSetup = true
     }
