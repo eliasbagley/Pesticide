@@ -8,9 +8,10 @@
 
 class SampleViewController : UIViewController {
     
-    let textField : UITextField = UITextField()
-    let enterButton : UIButton = UIButton()
-    let label : UILabel = UILabel()
+    let textField: UITextField = UITextField()
+    let enterButton: UIButton = UIButton()
+    let label: UILabel = UILabel()
+    let coolLabel: UILabel = UILabel()
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -27,6 +28,28 @@ class SampleViewController : UIViewController {
         self.enterButton.addTarget(self, action: Selector("enterButtonTouch:"), forControlEvents: .TouchUpInside)
         
         #if DEBUG
+            Pesticide.addCommand("log", block: { (components: Array<String>) in
+                if components.count < 1 {
+                    return;
+                }
+                if let times = components[0].toInt() {
+                    for count in 0..<times {
+                        Pesticide.log("did it \(count)")
+                    }
+                }
+            })
+            
+            Pesticide.addCommand("stab", block: { (components: Array<String>) in
+                if components.count < 1 {
+                    return;
+                }
+                if let times = components[0].toInt() {
+                    for count in 0..<times {
+                        Pesticide.log("die, die, die")
+                    }
+                }
+            })
+            
             Pesticide.addButton("crash", { () in
                 assert(false, "SOME CRASH AHHHH!!!!")
             })
@@ -51,6 +74,9 @@ class SampleViewController : UIViewController {
     
     func enterButtonTouch(sender: UIButton!) {
         self.label.text = "Hello, " + self.textField.text
+        #if DEBUG
+            Pesticide.log("INPUT: \(self.textField.text)")
+        #endif
     }
     
     func setupView() {
@@ -59,10 +85,14 @@ class SampleViewController : UIViewController {
         self.enterButton.setTitle("Say Hello", forState: .Normal)
         self.enterButton.setTitleColor(UIColor.blueColor(), forState: .Normal)
         self.textField.placeholder = "Your Name"
+        self.coolLabel.text = "COOL LABEL"
+        self.coolLabel.backgroundColor = .yellowColor()
+        self.coolLabel.textColor = .blackColor()
         
         self.textField.setTranslatesAutoresizingMaskIntoConstraints(false)
         self.enterButton.setTranslatesAutoresizingMaskIntoConstraints(false)
         self.label.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.coolLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
         
         self.textField.backgroundColor = .whiteColor()
         self.enterButton.backgroundColor = .whiteColor()
@@ -71,6 +101,7 @@ class SampleViewController : UIViewController {
         self.view.addSubview(self.textField)
         self.view.addSubview(self.enterButton)
         self.view.addSubview(self.label)
+        self.view.addSubview(self.coolLabel)
         
         self.applyConstraints()
     }
@@ -79,10 +110,14 @@ class SampleViewController : UIViewController {
         
         let bindings = ["textField": self.textField,
                         "button": self.enterButton,
-                        "label": self.label]
+                        "label": self.label,
+                        "coolLabel": self.coolLabel]
         
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "V:|-(40)-[textField(40)]-[button(40)]-[label(40)]", options: NSLayoutFormatOptions(0), metrics: nil, views: bindings))
+        
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+            "V:|-(40)-[coolLabel(40)]", options: NSLayoutFormatOptions(0), metrics: nil, views: bindings))
         
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "|-[textField]-|", options: NSLayoutFormatOptions(0), metrics: nil, views: bindings))
@@ -92,5 +127,7 @@ class SampleViewController : UIViewController {
 
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
             "|-[label]-|", options: NSLayoutFormatOptions(0), metrics: nil, views: bindings))
+        
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|-[coolLabel]-|", options: NSLayoutFormatOptions(0), metrics: nil, views: bindings))
     }
 }
