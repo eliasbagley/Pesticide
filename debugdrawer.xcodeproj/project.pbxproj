@@ -44,6 +44,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		BC758B261A20684C00BD0283 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC758B211A20684C00BD0283 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
+		BC758B281A20684C00BD0283 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC758B211A20684C00BD0283 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
+			remoteInfo = AlamofireTests;
+		};
+		BC758B2A1A20688800BD0283 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC758B211A20684C00BD0283 /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
 		BD361B811A1F8C6D006AE819 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BD361B631A1F8C6D006AE819 /* Project object */;
@@ -61,6 +82,7 @@
 		BC084C311A1F9DE400E68797 /* DebugView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		BC084C331A1F9FA800E68797 /* SampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		BC084C351A1FCE7600E68797 /* Pesticide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pesticide.swift; sourceTree = "<group>"; };
+		BC758B211A20684C00BD0283 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = SOURCE_ROOT; };
 		BCC48DE41A2023E300C2AB4F /* SwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
 		BCC48DE61A20254000C2AB4F /* PesticideCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PesticideCell.swift; sourceTree = "<group>"; };
 		BCC48DE81A20287800C2AB4F /* SwitchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
@@ -160,6 +182,23 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		BC758B201A20683F00BD0283 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				BC758B211A20684C00BD0283 /* Alamofire.xcodeproj */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		BC758B221A20684C00BD0283 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BC758B271A20684C00BD0283 /* Alamofire.framework */,
+				BC758B291A20684C00BD0283 /* AlamofireTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		BD361B621A1F8C6D006AE819 = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +222,7 @@
 		BD361B6D1A1F8C6D006AE819 /* debugdrawer */ = {
 			isa = PBXGroup;
 			children = (
+				BC758B201A20683F00BD0283 /* Vendor */,
 				BD649DA21A205D610030ECAF /* Extensions */,
 				BD649D621A201D5B0030ECAF /* Utils */,
 				D624A2ED1A1FC9EE00B71EF5 /* CocoaLumberjack.swift */,
@@ -266,6 +306,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				BC758B2B1A20688800BD0283 /* PBXTargetDependency */,
 			);
 			name = debugdrawer;
 			productName = debugdrawer;
@@ -321,6 +362,12 @@
 			mainGroup = BD361B621A1F8C6D006AE819;
 			productRefGroup = BD361B6C1A1F8C6D006AE819 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = BC758B221A20684C00BD0283 /* Products */;
+					ProjectRef = BC758B211A20684C00BD0283 /* Alamofire.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				BD361B6A1A1F8C6D006AE819 /* debugdrawer */,
@@ -328,6 +375,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		BC758B271A20684C00BD0283 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = BC758B261A20684C00BD0283 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BC758B291A20684C00BD0283 /* AlamofireTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AlamofireTests.xctest;
+			remoteRef = BC758B281A20684C00BD0283 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BD361B691A1F8C6D006AE819 /* Resources */ = {
@@ -487,6 +551,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		BC758B2B1A20688800BD0283 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			targetProxy = BC758B2A1A20688800BD0283 /* PBXContainerItemProxy */;
+		};
 		BD361B821A1F8C6D006AE819 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BD361B6A1A1F8C6D006AE819 /* debugdrawer */;
@@ -548,7 +617,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
@@ -587,7 +656,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "debugdrawer/Debugdrawer-Bridging-Header.h";

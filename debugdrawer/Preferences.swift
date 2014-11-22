@@ -10,12 +10,16 @@ import Foundation
 
 class Preferences {
     class func save(key: String, object: AnyObject?) {
-        NSUserDefaults.standardUserDefaults().setObject(object, forKey:key)
+        NSUserDefaults.standardUserDefaults().setObject(object, forKey: key)
         NSUserDefaults.standardUserDefaults().synchronize()
     }
 
     class func load(key: String) -> AnyObject? {
         return NSUserDefaults.standardUserDefaults().valueForKey(key)
+    }
+    
+    class func loadString(key: String) -> String {
+        return NSUserDefaults.standardUserDefaults().valueForKey(key) as String
     }
 
     class func isSet(key: String) -> Bool {

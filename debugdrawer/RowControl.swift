@@ -94,6 +94,17 @@ class TextInputControl : RowControl {
     
     init (name : String, block: (String) -> ()) {
         self.block = block
+        
+        if (Preferences.isSet(name)) {
+//            var val = Preferences.load(name) as String?
+//            var val: [NSString]? = Preferences.load(name) as? [NSString] //NSUserDefaults.standardUserDefaults().objectForKey("food") as? [NSString]
+//            self.value = val as String!
+            self.value = Preferences.loadString(name)
+            block(self.value)
+            
+            print("VALUE: \(self.value)")
+        }
+        
         super.init(name: name, type: .TextInput)
     }
     
@@ -103,6 +114,8 @@ class TextInputControl : RowControl {
     }
     
     func executeBlock (input: String) {
+        self.value = input
+        Preferences.save(self.name, object: self.value)
         self.block(input)
     }
 
