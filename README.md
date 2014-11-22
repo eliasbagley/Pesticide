@@ -1,4 +1,4 @@
-Pesticide
+![alt tag](https://lh4.googleusercontent.com/-qN2cLFwZsWE/VHChOlWF8JI/AAAAAAAAACk/WCbp2guAt-Y/s433/icon_38453small.png)Pesticide
 ================
 
 Pesticide is a  debugging framework for iOS which allows developers to use build in and custom debug controls at runtime. Pesticide was inspired by the [Debug Drawer](https://github.com/JakeWharton/u2020) for Android.
