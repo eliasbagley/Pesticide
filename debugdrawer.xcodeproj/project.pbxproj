@@ -33,6 +33,8 @@
 		BD649D671A2025F00030ECAF /* Proxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD649D661A2025F00030ECAF /* Proxy.swift */; };
 		BD649D691A2028210030ECAF /* BuildUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD649D681A2028210030ECAF /* BuildUtils.swift */; };
 		BD649D6D1A202FA50030ECAF /* DeviceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD649D6C1A202FA50030ECAF /* DeviceUtils.swift */; };
+		BD649DA11A205D4D0030ECAF /* ViewInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD649DA01A205D4D0030ECAF /* ViewInspector.swift */; };
+		BD649DA41A205D7D0030ECAF /* UIView+Pesticide.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD649DA31A205D7D0030ECAF /* UIView+Pesticide.swift */; };
 		D624A2E81A1FB3AB00B71EF5 /* DebugTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D624A2E71A1FB3AB00B71EF5 /* DebugTableController.swift */; };
 		D624A2EB1A1FB3B600B71EF5 /* CommandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D624A2E91A1FB3B600B71EF5 /* CommandCell.swift */; };
 		D624A2EC1A1FB3B600B71EF5 /* CommandCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D624A2EA1A1FB3B600B71EF5 /* CommandCell.xib */; };
@@ -85,6 +87,8 @@
 		BD649D661A2025F00030ECAF /* Proxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Proxy.swift; sourceTree = "<group>"; };
 		BD649D681A2028210030ECAF /* BuildUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildUtils.swift; sourceTree = "<group>"; };
 		BD649D6C1A202FA50030ECAF /* DeviceUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceUtils.swift; sourceTree = "<group>"; };
+		BD649DA01A205D4D0030ECAF /* ViewInspector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInspector.swift; sourceTree = "<group>"; };
+		BD649DA31A205D7D0030ECAF /* UIView+Pesticide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Pesticide.swift"; sourceTree = "<group>"; };
 		D624A2E71A1FB3AB00B71EF5 /* DebugTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugTableController.swift; sourceTree = "<group>"; };
 		D624A2E91A1FB3B600B71EF5 /* CommandCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandCell.swift; sourceTree = "<group>"; };
 		D624A2EA1A1FB3B600B71EF5 /* CommandCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommandCell.xib; sourceTree = "<group>"; };
@@ -179,6 +183,7 @@
 		BD361B6D1A1F8C6D006AE819 /* debugdrawer */ = {
 			isa = PBXGroup;
 			children = (
+				BD649DA21A205D610030ECAF /* Extensions */,
 				BD649D621A201D5B0030ECAF /* Utils */,
 				D624A2ED1A1FC9EE00B71EF5 /* CocoaLumberjack.swift */,
 				D624A2E71A1FB3AB00B71EF5 /* DebugTableController.swift */,
@@ -230,8 +235,17 @@
 				BD649D661A2025F00030ECAF /* Proxy.swift */,
 				BD649D681A2028210030ECAF /* BuildUtils.swift */,
 				BD649D6C1A202FA50030ECAF /* DeviceUtils.swift */,
+				BD649DA01A205D4D0030ECAF /* ViewInspector.swift */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		BD649DA21A205D610030ECAF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BD649DA31A205D7D0030ECAF /* UIView+Pesticide.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -454,8 +468,10 @@
 				BCC48DF01A202E2100C2AB4F /* TextFieldCell.swift in Sources */,
 				BC084C361A1FCE7600E68797 /* Pesticide.swift in Sources */,
 				BD649D6D1A202FA50030ECAF /* DeviceUtils.swift in Sources */,
+				BD649DA41A205D7D0030ECAF /* UIView+Pesticide.swift in Sources */,
 				BD361B711A1F8C6D006AE819 /* AppDelegate.swift in Sources */,
 				BCC48DE51A2023E300C2AB4F /* SwitchCell.swift in Sources */,
+				BD649DA11A205D4D0030ECAF /* ViewInspector.swift in Sources */,
 				D624A2EB1A1FB3B600B71EF5 /* CommandCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
