@@ -7,11 +7,12 @@ Pesticide is a  debugging framework for iOS which allows developers to use build
 - [x] In app debug menu
 - [x] App level HTTP proxy configuration
 - [x] Logger console
+- [x] Adding custom commands to trigger closure execution
 - [x] Crosshair alignment tool
 - [x] View all touches tool
 - [x] View hierarchy analysis tool
 - [x] Adding custom controls to debug menu
-- [x] Build and Device information
+- [x] Current Build and Device information
 
 ## Requirements
 
@@ -28,7 +29,7 @@ Importing target with Git submodule
 
 ## Installation
 
-_Due to the current lack of [proper infrastructure](http://cocoapods.org) for Swift dependeny management, using Pesticde in your project requires the following steps:_
+_Due to the current lack of [proper infrastructure](http://cocoapods.org) for Swift dependeny management, using Pesticide in your project requires the following steps:_
 
 1. Add pesticide as a [submodule](http://git-scm.com/docs/git-submodule) by opening the Terminal, `cd`-ing into your top-level project directory, and entering the command `git submodule add https://github.com/eliasbagley/Pesticide.git`
 2. Open the `debug-drawer` folder, and drag `debugdrawer.xcodeproj` into the file navigator of your app project.
@@ -53,7 +54,7 @@ to setup Pesticide
 
 You can log to the pesticide live console using
 ```swift
-Pesticide.log("some message")
+Pesticide.log("Hello, World!")
 ```
 
 You can add custom controls to the debug view controller using any of:
@@ -67,12 +68,15 @@ Pesticide.addLabel(name: String, label: String)
 Pesticide.addTextInput(name: String, block: (String) -> ())
 ```
 
-The blocks are callbacks used when the value of the control is changed, allowing you to add custom functionality or run code ad hoc
+The blocks are callbacks used when the value of the control is changed, allowing you to add custom functionality and run arbitrary code
+
+
+Pesticde has a control to configure app level proxy settings, rather than having to set the proxy at the system level
 
 ```swift
 Pesticide.addProxy(block: (NSURLSessionConfiguration?) -> ())
 ```
-addProxy takes a closure that takes an NSURLSessionConfiguration? object allowing you to plug into whatever networking framework your project uses.
+addProxy accepts a closure that passes in NSURLSessionConfiguration? object allowing you to plug into whatever networking framework your project uses.
 the NSURLSessionConfiguration will be configured based on a host and port. The syntax for the proxy textfield is "host:port"
 e.g.
 111.11.11.1:8888
@@ -81,7 +85,7 @@ You can also add more customized functionality using
 ```swift
 Pesticide.addCommand(commandName: String, block: Array<String> -> ())
 ```
-the block takes an array of words used in the command following the commandName. e.g.
+The block takes an array of words used in the command following the commandName. e.g.
 ```swift
 Pesticide.addCommand("stab", block: { (components: Array<String>) in
                 if components.count < 1 {
@@ -102,6 +106,17 @@ to get the output:
 
 die, die, die
 die, die, die
+
+## Builtin Controls
+
+Pesticide comes configured with several debugging tools.
+
+The hierarchy viewer allows you to tap on views to remove them from the view hierarchy, thus peeling away at the views to reveal what is underneath
+
+The crosshair view displays a crosshair overlay, useful for designers to check if UI components are correctly lined up and using the correct margins
+
+The show touches tool shows a small blip at the touch location
+
 
 in the live view of the pesticide log
 
