@@ -73,6 +73,9 @@ class SampleViewController : UIViewController {
     
     func enterButtonTouch(sender: UIButton!) {
         self.label.text = "Hello, " + self.textField.text
+        #if DEBUG
+            Pesticide.log("INPUT: \(self.textField.text)")
+        #endif
     }
     
     func setupView() {

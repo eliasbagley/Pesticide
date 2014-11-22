@@ -70,13 +70,11 @@ extension UIView {
         self.defaultAlpha = Float(self.alpha)
         self.defaultUserInteractionBool = self.userInteractionEnabled
         self.defaultBorderWidth = Float(self.layer.borderWidth)
-        println(self.userInteractionEnabled)
     }
 
     func restoreDefaults() {
         self.alpha = CGFloat(self.defaultAlpha)
         self.userInteractionEnabled = self.defaultUserInteractionBool
         self.layer.borderWidth = CGFloat(self.defaultBorderWidth)
-        println(self.userInteractionEnabled)
     }
 }
