@@ -30,6 +30,7 @@
 		BD361B781A1F8C6D006AE819 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD361B771A1F8C6D006AE819 /* Images.xcassets */; };
 		BD361B7B1A1F8C6D006AE819 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD361B791A1F8C6D006AE819 /* LaunchScreen.xib */; };
 		BD361B871A1F8C6D006AE819 /* debugdrawerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD361B861A1F8C6D006AE819 /* debugdrawerTests.swift */; };
+		BD3EBDA61A20AA3000FFF184 /* UIColor+Pesticide.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3EBDA51A20AA3000FFF184 /* UIColor+Pesticide.swift */; };
 		BD649D641A201D660030ECAF /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD649D631A201D660030ECAF /* Preferences.swift */; };
 		BD649D671A2025F00030ECAF /* Proxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD649D661A2025F00030ECAF /* Proxy.swift */; };
 		BD649D691A2028210030ECAF /* BuildUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD649D681A2028210030ECAF /* BuildUtils.swift */; };
@@ -133,6 +134,7 @@
 		BD361B851A1F8C6D006AE819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD361B861A1F8C6D006AE819 /* debugdrawerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = debugdrawerTests.swift; sourceTree = "<group>"; };
 		BD361B911A1F923C006AE819 /* Debugdrawer-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Debugdrawer-Bridging-Header.h"; sourceTree = "<group>"; };
+		BD3EBDA51A20AA3000FFF184 /* UIColor+Pesticide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Pesticide.swift"; sourceTree = "<group>"; };
 		BD649D631A201D660030ECAF /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		BD649D661A2025F00030ECAF /* Proxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Proxy.swift; sourceTree = "<group>"; };
 		BD649D681A2028210030ECAF /* BuildUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildUtils.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				BD649DA31A205D7D0030ECAF /* UIView+Pesticide.swift */,
+				BD3EBDA51A20AA3000FFF184 /* UIColor+Pesticide.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -573,6 +576,7 @@
 				BC084C361A1FCE7600E68797 /* Pesticide.swift in Sources */,
 				BD649D6D1A202FA50030ECAF /* DeviceUtils.swift in Sources */,
 				BD649DA41A205D7D0030ECAF /* UIView+Pesticide.swift in Sources */,
+				BD3EBDA61A20AA3000FFF184 /* UIColor+Pesticide.swift in Sources */,
 				BD361B711A1F8C6D006AE819 /* AppDelegate.swift in Sources */,
 				BCC48DE51A2023E300C2AB4F /* SwitchCell.swift in Sources */,
 				BD649DA11A205D4D0030ECAF /* ViewInspector.swift in Sources */,

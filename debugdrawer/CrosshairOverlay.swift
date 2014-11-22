@@ -27,14 +27,14 @@ class CrosshairOverlay : UIView {
 
         vertical.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.75)
         horizontal.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.75)
-        label.backgroundColor = UIColor.redColor()
+        label.textColor = UIColor.redColor()
 
         horizontal.setTranslatesAutoresizingMaskIntoConstraints(false)
         vertical.setTranslatesAutoresizingMaskIntoConstraints(false)
 
         horizontal.frame = CGRectMake(0, 0, CGRectGetWidth(self.bounds), lineWidth)
         vertical.frame = CGRectMake(0, 0, lineWidth, CGRectGetHeight(self.bounds))
-        label.frame = CGRectMake(0, 0, 100, 30)
+        label.frame = CGRectMake(0, 15, 100, 30)
 
         self.addSubview(horizontal)
         self.addSubview(vertical)
