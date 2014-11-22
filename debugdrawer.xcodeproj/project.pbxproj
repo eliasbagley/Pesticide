@@ -20,6 +20,7 @@
 		BD361B871A1F8C6D006AE819 /* debugdrawerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD361B861A1F8C6D006AE819 /* debugdrawerTests.swift */; };
 		BD649D641A201D660030ECAF /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD649D631A201D660030ECAF /* Preferences.swift */; };
 		BD649D671A2025F00030ECAF /* Proxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD649D661A2025F00030ECAF /* Proxy.swift */; };
+		BD649D691A2028210030ECAF /* BuildUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD649D681A2028210030ECAF /* BuildUtils.swift */; };
 		D624A2E81A1FB3AB00B71EF5 /* DebugTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D624A2E71A1FB3AB00B71EF5 /* DebugTableController.swift */; };
 		D624A2EB1A1FB3B600B71EF5 /* CommandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D624A2E91A1FB3B600B71EF5 /* CommandCell.swift */; };
 		D624A2EC1A1FB3B600B71EF5 /* CommandCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D624A2EA1A1FB3B600B71EF5 /* CommandCell.xib */; };
@@ -59,6 +60,7 @@
 		BD361B911A1F923C006AE819 /* Debugdrawer-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Debugdrawer-Bridging-Header.h"; sourceTree = "<group>"; };
 		BD649D631A201D660030ECAF /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		BD649D661A2025F00030ECAF /* Proxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Proxy.swift; sourceTree = "<group>"; };
+		BD649D681A2028210030ECAF /* BuildUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildUtils.swift; sourceTree = "<group>"; };
 		D624A2E71A1FB3AB00B71EF5 /* DebugTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugTableController.swift; sourceTree = "<group>"; };
 		D624A2E91A1FB3B600B71EF5 /* CommandCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandCell.swift; sourceTree = "<group>"; };
 		D624A2EA1A1FB3B600B71EF5 /* CommandCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommandCell.xib; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			children = (
 				BD649D631A201D660030ECAF /* Preferences.swift */,
 				BD649D661A2025F00030ECAF /* Proxy.swift */,
+				BD649D681A2028210030ECAF /* BuildUtils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -207,6 +210,8 @@
 				BD361B681A1F8C6D006AE819 /* Frameworks */,
 				BD361B691A1F8C6D006AE819 /* Resources */,
 				9EE5983AA9A375FE4683692B /* Copy Pods Resources */,
+				BD649D6A1A2028DB0030ECAF /* Copy git hash */,
+				BD649D6B1A202D320030ECAF /* Get Date */,
 			);
 			buildRules = (
 			);
@@ -341,6 +346,34 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		BD649D6A1A2028DB0030ECAF /* Copy git hash */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy git hash";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Copyright (c) 2012 Albert Tong <ahtong@gmail.com>\n#\n# Permission is hereby granted, free of charge, to any person obtaining a copy\n# of this software and associated documentation files (the \"Software\"), to deal\n# in the Software without restriction, including without limitation the rights\n# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n# copies of the Software, and to permit persons to whom the Software is furnished\n# to do so, subject to the following conditions:\n#\n# The above copyright notice and this permission notice shall be included in all\n# copies or substantial portions of the Software.\n#\n# THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n# THE SOFTWARE.\n#\n#\n# This script retrieves the first 7 characters of the commit SHA (hash).\n# Instructions:\n# Add this file to your project bundle or target.\n# Go to Project settings > target > Build Phases > Run Script.\n# Add Shell /bin/sh and a value with the bundle path to this script\n# Add \"GITHash\" as a key to your app's info plist to compile.\n# Reference the property list with the \"GITHash\" key to obtain the git hash value.\n\nINFOPLISTPATH=\"${TARGET_BUILD_DIR}/${EXECUTABLE_NAME}.app/Info.plist\"\n\n# Location of PlistBuddy\nPLISTBUDDY=\"/usr/libexec/PlistBuddy\"\n\n# Get the current git commmit hash (first 7 characters of the SHA)\nGITREVSHA=$(git --git-dir=\"${PROJECT_DIR}/.git\" --work-tree=\"${PROJECT_DIR}\" rev-parse --short HEAD)\n\necho \"GIT SHA = ${GITREVSHA}\"\necho \"INFOPLISTPATH = ${INFOPLISTPATH}\"\n\n# Set the Git hash in the info plist for reference\n$PLISTBUDDY -c \"Set :GITHash $GITREVSHA\" \"${INFOPLISTPATH}\"";
+		};
+		BD649D6B1A202D320030ECAF /* Get Date */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Get Date";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "infoplist=\"$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH\"\nbuilddate=`date`\n/usr/libexec/PlistBuddy -c \"Set :BuildDateKey $builddate\" ${infoplist}";
+		};
 		FDA443B2A7DE87856A81DFCA /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -363,6 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD649D691A2028210030ECAF /* BuildUtils.swift in Sources */,
 				D624A2FA1A200C8B00B71EF5 /* RowControl.swift in Sources */,
 				BC084C321A1F9DE400E68797 /* DebugView.swift in Sources */,
 				D624A2EE1A1FC9EE00B71EF5 /* CocoaLumberjack.swift in Sources */,
