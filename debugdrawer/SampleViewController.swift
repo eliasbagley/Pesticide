@@ -31,14 +31,19 @@ class SampleViewController : UIViewController {
                 assert(false, "SOME CRASH AHHHH!!!!")
             })
             
-            Pesticide.addSlider("alpha", block: { (value :Float) in
+            Pesticide.addSlider(Float(self.view.alpha),name:"alpha", block: { (value :Float) in
                 let currentColor = self.view.backgroundColor
-                self.view.backgroundColor = currentColor?.colorWithAlphaComponent(CGFloat(value))
+                self.view.alpha = CGFloat(value)
             })
             
             Pesticide.addTextInput("auto layout", block: { (text: String) in
                 self.label.text = text
             })
+            
+            Pesticide.addDropdown("Blue",name: "color", options: ["Black":UIColor.blackColor(),"Blue":UIColor.blueColor(),"Red":UIColor.redColor(),"Green":UIColor.greenColor()], block:{(option:AnyObject) in
+                let newColor = option as UIColor
+                self.view.backgroundColor = newColor
+                })
         #endif
         
         print("sample inited")

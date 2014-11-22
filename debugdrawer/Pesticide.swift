@@ -45,20 +45,20 @@ public class Pesticide {
         block?(components)
     }
     
-    public class func addSwitch(name: String, block: Bool -> ()) {
-        CV.debugVC.addRowControl(SwitchControl(name: name, block: block))
+    public class func addSwitch(intialValue: Bool, name: String, block: Bool -> ()) {
+        CV.debugVC.addRowControl(SwitchControl(intialValue: intialValue, name: name, block: block))
     }
     
     public class func addButton(name: String, block: () -> ()) {
         CV.debugVC.addRowControl(ButtonControl(name: name, block: block))
     }
     
-    public class func addSlider(name: String, block: Float -> ()) {
-        CV.debugVC.addRowControl(SliderControl(name: name, block: block))
+    public class func addSlider(intialValue: Float, name: String, block: Float -> ()) {
+        CV.debugVC.addRowControl(SliderControl(intialValue: intialValue, name: name, block: block))
     }
     
-    public class func addDropdown(name: String, options: Array<String>, block: (option: String) -> ()) {
-        CV.debugVC.addRowControl(DropDownControl(name: name, options:options, block: block))
+    public class func addDropdown(initialValue: String, name: String, options: Dictionary<String,AnyObject>, block: (option: AnyObject) -> ()) {
+        CV.debugVC.addRowControl(DropDownControl(initialValue: initialValue, name: name, options:options, block: block))
     }
     
     public class func addLabel(name: String, label: String) {

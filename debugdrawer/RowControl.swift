@@ -31,10 +31,11 @@ class RowControl: NSObject {
 class SwitchControl : RowControl {
     
     var block : Bool -> ()
-    var value = false
+    var value : Bool
     
-    init (name : String, block: Bool -> ()) {
+    init (intialValue: Bool, name : String, block: Bool -> ()) {
         self.block = block
+        self.value = intialValue
         super.init(name: name, type: .Switch)
     }
     
@@ -46,10 +47,11 @@ class SwitchControl : RowControl {
 class SliderControl : RowControl {
     
     var block : Float -> ()
-    var value = 0.0
+    var value : Float
 
-    init (name : String, block: Float -> ()) {
+    init (intialValue: Float, name : String, block: Float -> ()) {
         self.block = block
+        self.value = intialValue
         super.init(name: name, type: .Slider)
     }
     
@@ -106,12 +108,23 @@ class TextInputControl : RowControl {
 
 }
 
-class DropDownControl : TextInputControl {
+class DropDownControl : RowControl {
     
-    var options : Array<AnyObject>
-    init (name : String, options: Array<String>, block : (option: String) -> ()) {
+    var options : Dictionary<String,AnyObject>
+    var block : AnyObject -> ()
+    var value : String
+    var optionStrings : Array<String>
+    
+    init (initialValue: NSString, name : String, options: Dictionary<String,AnyObject>, block : (option: AnyObject) -> ()) {
+        self.value = initialValue
         self.options = options
-        super.init(name: name, type: .DropDown, block: block)
+        self.optionStrings = [String](options.keys)
+        self.block = block
+        super.init(name: name, type: .DropDown)
+    }
+    
+    func executeBlock(input: String) {
+        self.block(self.options[input]!)
     }
     
 }
