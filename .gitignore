@@ -19,6 +19,7 @@ DerivedData
 *.xcuserdata
 *.xcshareddata
 *.playground
+.DS_Store
 
 # CocoaPods
 #
