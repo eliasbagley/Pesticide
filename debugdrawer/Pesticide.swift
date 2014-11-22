@@ -119,6 +119,7 @@ public class Pesticide {
         self.setupLogging()
         // Build information
         Pesticide.addHeader("Build Information")
+
         Pesticide.addLabel("Date:", label: BuildUtils.getDateString())
         Pesticide.addLabel("Version:", label: BuildUtils.getVersionString())
         Pesticide.addLabel("Build:", label: BuildUtils.getBuildNumberString())

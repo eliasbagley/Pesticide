@@ -30,6 +30,7 @@
 		BD361B781A1F8C6D006AE819 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD361B771A1F8C6D006AE819 /* Images.xcassets */; };
 		BD361B7B1A1F8C6D006AE819 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD361B791A1F8C6D006AE819 /* LaunchScreen.xib */; };
 		BD361B871A1F8C6D006AE819 /* debugdrawerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD361B861A1F8C6D006AE819 /* debugdrawerTests.swift */; };
+		BD3EBDA61A20AA3000FFF184 /* UIColor+Pesticide.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3EBDA51A20AA3000FFF184 /* UIColor+Pesticide.swift */; };
 		BD649D641A201D660030ECAF /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD649D631A201D660030ECAF /* Preferences.swift */; };
 		BD649D671A2025F00030ECAF /* Proxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD649D661A2025F00030ECAF /* Proxy.swift */; };
 		BD649D691A2028210030ECAF /* BuildUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD649D681A2028210030ECAF /* BuildUtils.swift */; };
@@ -121,16 +122,17 @@
 		BCC48DF31A202EB000C2AB4F /* SliderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SliderCell.xib; sourceTree = "<group>"; };
 		BCC48DF61A20301F00C2AB4F /* LabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelCell.swift; sourceTree = "<group>"; };
 		BCC48DF71A20301F00C2AB4F /* LabelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelCell.xib; sourceTree = "<group>"; };
-		BD361B6B1A1F8C6D006AE819 /* debugdrawer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = debugdrawer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD361B6B1A1F8C6D006AE819 /* pesticide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pesticide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD361B6F1A1F8C6D006AE819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD361B701A1F8C6D006AE819 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD361B751A1F8C6D006AE819 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BD361B771A1F8C6D006AE819 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BD361B7A1A1F8C6D006AE819 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		BD361B801A1F8C6D006AE819 /* debugdrawerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = debugdrawerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD361B801A1F8C6D006AE819 /* pesticideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pesticideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD361B851A1F8C6D006AE819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD361B861A1F8C6D006AE819 /* debugdrawerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = debugdrawerTests.swift; sourceTree = "<group>"; };
 		BD361B911A1F923C006AE819 /* Debugdrawer-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Debugdrawer-Bridging-Header.h"; sourceTree = "<group>"; };
+		BD3EBDA51A20AA3000FFF184 /* UIColor+Pesticide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Pesticide.swift"; sourceTree = "<group>"; };
 		BD649D631A201D660030ECAF /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		BD649D661A2025F00030ECAF /* Proxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Proxy.swift; sourceTree = "<group>"; };
 		BD649D681A2028210030ECAF /* BuildUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildUtils.swift; sourceTree = "<group>"; };
@@ -232,8 +234,8 @@
 		BD361B621A1F8C6D006AE819 = {
 			isa = PBXGroup;
 			children = (
-				BD361B6D1A1F8C6D006AE819 /* debugdrawer */,
-				BD361B831A1F8C6D006AE819 /* debugdrawerTests */,
+				BD361B6D1A1F8C6D006AE819 /* pesticide */,
+				BD361B831A1F8C6D006AE819 /* pesticideTests */,
 				BD361B6C1A1F8C6D006AE819 /* Products */,
 				0BA5747C8C1622A5EB115A7C /* Pods */,
 				62CD7D1B538C88106D05A59F /* Frameworks */,
@@ -243,13 +245,13 @@
 		BD361B6C1A1F8C6D006AE819 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BD361B6B1A1F8C6D006AE819 /* debugdrawer.app */,
-				BD361B801A1F8C6D006AE819 /* debugdrawerTests.xctest */,
+				BD361B6B1A1F8C6D006AE819 /* pesticide.app */,
+				BD361B801A1F8C6D006AE819 /* pesticideTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BD361B6D1A1F8C6D006AE819 /* debugdrawer */ = {
+		BD361B6D1A1F8C6D006AE819 /* pesticide */ = {
 			isa = PBXGroup;
 			children = (
 				BC758B201A20683F00BD0283 /* Vendor */,
@@ -268,6 +270,7 @@
 				BC084C351A1FCE7600E68797 /* Pesticide.swift */,
 				D624A2F91A200C8B00B71EF5 /* RowControl.swift */,
 			);
+			name = pesticide;
 			path = debugdrawer;
 			sourceTree = "<group>";
 		};
@@ -280,12 +283,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		BD361B831A1F8C6D006AE819 /* debugdrawerTests */ = {
+		BD361B831A1F8C6D006AE819 /* pesticideTests */ = {
 			isa = PBXGroup;
 			children = (
 				BD361B861A1F8C6D006AE819 /* debugdrawerTests.swift */,
 				BD361B841A1F8C6D006AE819 /* Supporting Files */,
 			);
+			name = pesticideTests;
 			path = debugdrawerTests;
 			sourceTree = "<group>";
 		};
@@ -313,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				BD649DA31A205D7D0030ECAF /* UIView+Pesticide.swift */,
+				BD3EBDA51A20AA3000FFF184 /* UIColor+Pesticide.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -320,9 +325,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BD361B6A1A1F8C6D006AE819 /* debugdrawer */ = {
+		BD361B6A1A1F8C6D006AE819 /* pesticide */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BD361B8A1A1F8C6D006AE819 /* Build configuration list for PBXNativeTarget "debugdrawer" */;
+			buildConfigurationList = BD361B8A1A1F8C6D006AE819 /* Build configuration list for PBXNativeTarget "pesticide" */;
 			buildPhases = (
 				A22E2654921DA1A53C99D089 /* Check Pods Manifest.lock */,
 				BD361B671A1F8C6D006AE819 /* Sources */,
@@ -339,14 +344,14 @@
 				BC758B2B1A20688800BD0283 /* PBXTargetDependency */,
 				BDE813861A20928500D02B8D /* PBXTargetDependency */,
 			);
-			name = debugdrawer;
+			name = pesticide;
 			productName = debugdrawer;
-			productReference = BD361B6B1A1F8C6D006AE819 /* debugdrawer.app */;
+			productReference = BD361B6B1A1F8C6D006AE819 /* pesticide.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BD361B7F1A1F8C6D006AE819 /* debugdrawerTests */ = {
+		BD361B7F1A1F8C6D006AE819 /* pesticideTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BD361B8D1A1F8C6D006AE819 /* Build configuration list for PBXNativeTarget "debugdrawerTests" */;
+			buildConfigurationList = BD361B8D1A1F8C6D006AE819 /* Build configuration list for PBXNativeTarget "pesticideTests" */;
 			buildPhases = (
 				8135C24A30AAD6ED708EE777 /* Check Pods Manifest.lock */,
 				BD361B7C1A1F8C6D006AE819 /* Sources */,
@@ -359,9 +364,9 @@
 			dependencies = (
 				BD361B821A1F8C6D006AE819 /* PBXTargetDependency */,
 			);
-			name = debugdrawerTests;
+			name = pesticideTests;
 			productName = debugdrawerTests;
-			productReference = BD361B801A1F8C6D006AE819 /* debugdrawerTests.xctest */;
+			productReference = BD361B801A1F8C6D006AE819 /* pesticideTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -382,7 +387,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BD361B661A1F8C6D006AE819 /* Build configuration list for PBXProject "debugdrawer" */;
+			buildConfigurationList = BD361B661A1F8C6D006AE819 /* Build configuration list for PBXProject "pesticide" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -401,8 +406,8 @@
 			);
 			projectRoot = "";
 			targets = (
-				BD361B6A1A1F8C6D006AE819 /* debugdrawer */,
-				BD361B7F1A1F8C6D006AE819 /* debugdrawerTests */,
+				BD361B6A1A1F8C6D006AE819 /* pesticide */,
+				BD361B7F1A1F8C6D006AE819 /* pesticideTests */,
 			);
 		};
 /* End PBXProject section */
@@ -566,6 +571,7 @@
 				BC084C361A1FCE7600E68797 /* Pesticide.swift in Sources */,
 				BD649D6D1A202FA50030ECAF /* DeviceUtils.swift in Sources */,
 				BD649DA41A205D7D0030ECAF /* UIView+Pesticide.swift in Sources */,
+				BD3EBDA61A20AA3000FFF184 /* UIColor+Pesticide.swift in Sources */,
 				BD361B711A1F8C6D006AE819 /* AppDelegate.swift in Sources */,
 				BCC48DE51A2023E300C2AB4F /* SwitchCell.swift in Sources */,
 				BD649DA11A205D4D0030ECAF /* ViewInspector.swift in Sources */,
@@ -590,7 +596,7 @@
 		};
 		BD361B821A1F8C6D006AE819 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BD361B6A1A1F8C6D006AE819 /* debugdrawer */;
+			target = BD361B6A1A1F8C6D006AE819 /* pesticide */;
 			targetProxy = BD361B811A1F8C6D006AE819 /* PBXContainerItemProxy */;
 		};
 		BDE813861A20928500D02B8D /* PBXTargetDependency */ = {
@@ -712,7 +718,7 @@
 				INFOPLIST_FILE = debugdrawer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = pesticide;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -727,7 +733,7 @@
 				INFOPLIST_FILE = debugdrawer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = pesticide;
 			};
 			name = Release;
 		};
@@ -746,7 +752,7 @@
 				);
 				INFOPLIST_FILE = debugdrawerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = pesticideTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/debugdrawer.app/debugdrawer";
 			};
 			name = Debug;
@@ -762,7 +768,7 @@
 				);
 				INFOPLIST_FILE = debugdrawerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = pesticideTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/debugdrawer.app/debugdrawer";
 			};
 			name = Release;
@@ -770,7 +776,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BD361B661A1F8C6D006AE819 /* Build configuration list for PBXProject "debugdrawer" */ = {
+		BD361B661A1F8C6D006AE819 /* Build configuration list for PBXProject "pesticide" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BD361B881A1F8C6D006AE819 /* Debug */,
@@ -779,7 +785,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BD361B8A1A1F8C6D006AE819 /* Build configuration list for PBXNativeTarget "debugdrawer" */ = {
+		BD361B8A1A1F8C6D006AE819 /* Build configuration list for PBXNativeTarget "pesticide" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BD361B8B1A1F8C6D006AE819 /* Debug */,
@@ -788,7 +794,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BD361B8D1A1F8C6D006AE819 /* Build configuration list for PBXNativeTarget "debugdrawerTests" */ = {
+		BD361B8D1A1F8C6D006AE819 /* Build configuration list for PBXNativeTarget "pesticideTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BD361B8E1A1F8C6D006AE819 /* Debug */,
