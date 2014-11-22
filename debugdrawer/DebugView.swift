@@ -19,7 +19,7 @@ class DebugView : UIView {
     }
     
     override init() {
-        super.init();
+        super.init()
         self.backgroundColor = .yellowColor()
     }
 }

@@ -15,7 +15,7 @@ class ViewInspector {
 
     init(rootView: UIView) {
         root = rootView
-        self.recurseThroughSubviews(rootView);
+        self.recurseThroughSubviews(rootView)
     }
 
     func recurseThroughSubviews(rootView: UIView) {

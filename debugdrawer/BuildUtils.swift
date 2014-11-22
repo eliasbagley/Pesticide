@@ -14,7 +14,7 @@ let kDateKey = "BuildDateKey"
 class BuildUtils {
     class func getGitHash() -> String {
         if let hash =  NSBundle.mainBundle().objectForInfoDictionaryKey(kGitHashKey) as? String {
-            return hash;
+            return hash
         }
 
         return ""
@@ -38,7 +38,7 @@ class BuildUtils {
 
     class func getDateString() -> String {
         if let hash =  NSBundle.mainBundle().objectForInfoDictionaryKey(kDateKey) as? String {
-            return hash;
+            return hash
         }
 
         return ""
