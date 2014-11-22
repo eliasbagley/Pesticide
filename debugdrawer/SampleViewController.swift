@@ -69,6 +69,10 @@ class SampleViewController : UIViewController {
                 let newColor = option as UIColor
                 self.view.backgroundColor = newColor
                 })
+
+            Pesticide.addButton("Network Request", { () in
+                (UIApplication.sharedApplication().delegate as AppDelegate).makeNetworkRequest()
+            })
         #endif
         
         print("sample inited")

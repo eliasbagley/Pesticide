@@ -80,7 +80,7 @@ public class Pesticide {
         CV.debugVC.addRowControl(HeaderControl(name: name))
     }
     
-    public class func addProxy(block: (NSURLSessionConfiguration?) -> ()) {
+    public class func addProxy(block: (NSURLSessionConfiguration) -> ()) {
         Pesticide.addTextInput("Proxy", block: { (hostAndPort: String) in
             let config = Proxy.createSessionConfiguration(hostAndPort)
             block(config)
