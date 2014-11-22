@@ -107,6 +107,8 @@ to get the output:
 die, die, die
 die, die, die
 
+in the live view of the pesticide log
+
 ## Builtin Controls
 
 Pesticide comes configured with several debugging tools.
@@ -117,8 +119,6 @@ The crosshair view displays a crosshair overlay, useful for designers to check i
 
 The show touches tool shows a small blip at the touch location
 
-
-in the live view of the pesticide log
 
 ## Contributors
 
