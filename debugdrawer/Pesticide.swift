@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Rocketmade. All rights reserved.
 //
 
+import MessageUI
+
 public enum PesticideControlType {
     case Button
     case Switch
@@ -194,6 +196,18 @@ public class Pesticide {
             default:
                 DDLog.logLevel = .Verbose
             }
+        })
+        Pesticide.addButton("Email Logs", block: { () -> () in
+            let mailController = MFMailComposeViewController()
+            mailController.setSubject("Logs")
+            mailController.setMessageBody("Here you go", isHTML: false)
+            mailController.mailComposeDelegate = CV.debugVC
+            let fileLogger = DDFileLogger()
+            let logFileInfo = fileLogger.currentLogFileInfo()
+            if let logData = NSData(contentsOfFile: logFileInfo.filePath) {
+                mailController.addAttachmentData(logData, mimeType: "text/plain", fileName: "logs.txt")
+            }
+            CV.debugVC.presentViewController(mailController, animated: true, completion: nil)
         })
     }
     

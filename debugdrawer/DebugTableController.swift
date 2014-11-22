@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import MessageUI
 
 class SectionInfo: NSObject {
     var rowObjects = Array<RowControl>()
 }
 
-class DebugTableController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class DebugTableController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, MFMailComposeViewControllerDelegate {
     
     var sectionObjects = [SectionInfo()]
     let dropDownPicker = UIPickerView()
@@ -223,4 +224,10 @@ class DebugTableController: UITableViewController, UIPickerViewDelegate, UIPicke
         }
         return "oops"
     }
+    
+    // MARK: - MailDelegate
+    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
+    }
+
 }
