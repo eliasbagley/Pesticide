@@ -34,7 +34,7 @@ public class Pesticide {
     
     public class func addCommand(commandName: String, block: Array<String> -> ()) {
         if !CV.hasCommandPrompt {
-            self.addTextInput("Pest Commands", block: {(command: String) in
+            self.addTextInput("Commands", block: {(command: String) in
                 if command.utf16Count < 1 {
                     return
                 }
@@ -81,7 +81,7 @@ public class Pesticide {
     }
     
     public class func addProxy(block: (NSURLSessionConfiguration?) -> ()) {
-        Pesticide.addTextInput("proxy", block: { (hostAndPort: String) in
+        Pesticide.addTextInput("Proxy", block: { (hostAndPort: String) in
             let config = Proxy.createSessionConfiguration(hostAndPort)
             block(config)
         })
@@ -119,15 +119,15 @@ public class Pesticide {
         self.setupLogging()
         // Build information
         Pesticide.addHeader("Build Information")
-        Pesticide.addLabel("date:", label: BuildUtils.getDateString())
-        Pesticide.addLabel("version:", label: BuildUtils.getVersionString())
-        Pesticide.addLabel("build:", label: BuildUtils.getBuildNumberString())
-        Pesticide.addLabel("hash:", label: BuildUtils.getGitHash())
+        Pesticide.addLabel("Date:", label: BuildUtils.getDateString())
+        Pesticide.addLabel("Version:", label: BuildUtils.getVersionString())
+        Pesticide.addLabel("Build:", label: BuildUtils.getBuildNumberString())
+        Pesticide.addLabel("Hash:", label: BuildUtils.getGitHash())
 
         // Device information
         Pesticide.addHeader("Device Information")
-        Pesticide.addLabel("device:", label: DeviceUtils.getDeviceVersionString())
-        Pesticide.addLabel("resolution:", label: DeviceUtils.getResolutionString())
+        Pesticide.addLabel("Device:", label: DeviceUtils.getDeviceVersionString())
+        Pesticide.addLabel("Resolution:", label: DeviceUtils.getResolutionString())
 
         // User interface
         Pesticide.addHeader("User Interface")

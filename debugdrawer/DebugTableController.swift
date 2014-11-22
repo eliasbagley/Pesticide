@@ -21,6 +21,7 @@ class DebugTableController: UITableViewController, UIPickerViewDelegate, UIPicke
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.backgroundColor = UIColor.darkGrayColor()
         self.dropDownPicker.delegate = self
         self.dropDownPicker.dataSource = self
         self.consoleView.editable = false
@@ -32,7 +33,6 @@ class DebugTableController: UITableViewController, UIPickerViewDelegate, UIPicke
         for type in cellIds {
             self.tableView.registerNib(UINib(nibName: type.rawValue, bundle: nil), forCellReuseIdentifier:type.rawValue)
         }
-        self.tableView .registerNib(UINib(nibName: CommandCellIdentifier, bundle: nil), forCellReuseIdentifier: CommandCellIdentifier)
         self.readCurrentLog()
         self.tableView.tableHeaderView = self.consoleView
     }
