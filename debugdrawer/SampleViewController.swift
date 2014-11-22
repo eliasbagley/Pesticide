@@ -27,24 +27,6 @@ class SampleViewController : UIViewController {
         self.enterButton.addTarget(self, action: Selector("enterButtonTouch:"), forControlEvents: .TouchUpInside)
         
         #if DEBUG
-            Pesticide.addButton("crash", { () in
-                assert(false, "SOME CRASH AHHHH!!!!")
-            })
-            
-            Pesticide.addSlider(Float(self.view.alpha),name:"alpha", block: { (value :Float) in
-                let currentColor = self.view.backgroundColor
-                self.view.alpha = CGFloat(value)
-            })
-            
-            Pesticide.addTextInput("auto layout", block: { (text: String) in
-                self.label.text = text
-            })
-            
-            Pesticide.addDropdown("Blue",name: "color", options: ["Black":UIColor.blackColor(),"Blue":UIColor.blueColor(),"Red":UIColor.redColor(),"Green":UIColor.greenColor()], block:{(option:AnyObject) in
-                let newColor = option as UIColor
-                self.view.backgroundColor = newColor
-                })
-            
             Pesticide.addCommand("log", block: { (components: Array<String>) in
                 if components.count < 1 {
                     return;
@@ -66,6 +48,24 @@ class SampleViewController : UIViewController {
                     }
                 }
             })
+            
+            Pesticide.addButton("crash", { () in
+                assert(false, "SOME CRASH AHHHH!!!!")
+            })
+            
+            Pesticide.addSlider(Float(self.view.alpha),name:"alpha", block: { (value :Float) in
+                let currentColor = self.view.backgroundColor
+                self.view.alpha = CGFloat(value)
+            })
+            
+            Pesticide.addTextInput("auto layout", block: { (text: String) in
+                self.label.text = text
+            })
+            
+            Pesticide.addDropdown("Blue",name: "color", options: ["Black":UIColor.blackColor(),"Blue":UIColor.blueColor(),"Red":UIColor.redColor(),"Green":UIColor.greenColor()], block:{(option:AnyObject) in
+                let newColor = option as UIColor
+                self.view.backgroundColor = newColor
+                })
         #endif
         
         print("sample inited")
