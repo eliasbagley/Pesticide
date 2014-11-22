@@ -12,6 +12,7 @@ public enum PesticideControlType {
     case Slider
     case Dropdown
     case Label
+    case Header
 }
 
 public class Pesticide {
@@ -74,7 +75,7 @@ public class Pesticide {
     }
 
     public class func addHeader(name: String) {
-        CV.debugVC.addRowControl(LabelControl(name: name, label: ""))
+        CV.debugVC.addRowControl(HeaderControl(name: name))
     }
     
     public class func addProxy(block: (NSURLSessionConfiguration?) -> ()) {
