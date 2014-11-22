@@ -24,7 +24,7 @@ public class Pesticide {
     }
 
     public class func log(message: String) {
-        print(message)
+        logInfo(message)
     }
     
     public class func addCommand(commandName: String, block: Array<String> -> ()) {
