@@ -35,6 +35,10 @@
 		BD649D6D1A202FA50030ECAF /* DeviceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD649D6C1A202FA50030ECAF /* DeviceUtils.swift */; };
 		BD649DA11A205D4D0030ECAF /* ViewInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD649DA01A205D4D0030ECAF /* ViewInspector.swift */; };
 		BD649DA41A205D7D0030ECAF /* UIView+Pesticide.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD649DA31A205D7D0030ECAF /* UIView+Pesticide.swift */; };
+		BDE8137E1A20855E00D02B8D /* CrosshairOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE8137D1A20855E00D02B8D /* CrosshairOverlay.swift */; };
+		BDE813821A20926600D02B8D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC758B271A20684C00BD0283 /* Alamofire.framework */; };
+		BDE813831A20928500D02B8D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC758B271A20684C00BD0283 /* Alamofire.framework */; };
+		BDE813841A20928500D02B8D /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BC758B271A20684C00BD0283 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D624A2E81A1FB3AB00B71EF5 /* DebugTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D624A2E71A1FB3AB00B71EF5 /* DebugTableController.swift */; };
 		D624A2EB1A1FB3B600B71EF5 /* CommandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D624A2E91A1FB3B600B71EF5 /* CommandCell.swift */; };
 		D624A2EC1A1FB3B600B71EF5 /* CommandCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D624A2EA1A1FB3B600B71EF5 /* CommandCell.xib */; };
@@ -72,7 +76,28 @@
 			remoteGlobalIDString = BD361B6A1A1F8C6D006AE819;
 			remoteInfo = debugdrawer;
 		};
+		BDE813851A20928500D02B8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC758B211A20684C00BD0283 /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BDE813871A20928500D02B8D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BDE813841A20928500D02B8D /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4A497ABC7E5B8C33E4743544 /* libPods-debugdrawer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-debugdrawer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +136,7 @@
 		BD649D6C1A202FA50030ECAF /* DeviceUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceUtils.swift; sourceTree = "<group>"; };
 		BD649DA01A205D4D0030ECAF /* ViewInspector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInspector.swift; sourceTree = "<group>"; };
 		BD649DA31A205D7D0030ECAF /* UIView+Pesticide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Pesticide.swift"; sourceTree = "<group>"; };
+		BDE8137D1A20855E00D02B8D /* CrosshairOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrosshairOverlay.swift; sourceTree = "<group>"; };
 		D624A2E71A1FB3AB00B71EF5 /* DebugTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugTableController.swift; sourceTree = "<group>"; };
 		D624A2E91A1FB3B600B71EF5 /* CommandCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandCell.swift; sourceTree = "<group>"; };
 		D624A2EA1A1FB3B600B71EF5 /* CommandCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommandCell.xib; sourceTree = "<group>"; };
@@ -126,6 +152,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDE813821A20926600D02B8D /* Alamofire.framework in Frameworks */,
+				BDE813831A20928500D02B8D /* Alamofire.framework in Frameworks */,
 				7E26CB1208067BF78297DBF6 /* libPods-debugdrawer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,6 +206,7 @@
 				BCC48DF31A202EB000C2AB4F /* SliderCell.xib */,
 				BCC48DF61A20301F00C2AB4F /* LabelCell.swift */,
 				BCC48DF71A20301F00C2AB4F /* LabelCell.xib */,
+				BDE8137D1A20855E00D02B8D /* CrosshairOverlay.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -302,11 +331,13 @@
 				9EE5983AA9A375FE4683692B /* Copy Pods Resources */,
 				BD649D6A1A2028DB0030ECAF /* Copy git hash */,
 				BD649D6B1A202D320030ECAF /* Get Date */,
+				BDE813871A20928500D02B8D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				BC758B2B1A20688800BD0283 /* PBXTargetDependency */,
+				BDE813861A20928500D02B8D /* PBXTargetDependency */,
 			);
 			name = debugdrawer;
 			productName = debugdrawer;
@@ -530,6 +561,7 @@
 				D624A2E81A1FB3AB00B71EF5 /* DebugTableController.swift in Sources */,
 				BC084C341A1F9FA800E68797 /* SampleViewController.swift in Sources */,
 				BCC48DF01A202E2100C2AB4F /* TextFieldCell.swift in Sources */,
+				BDE8137E1A20855E00D02B8D /* CrosshairOverlay.swift in Sources */,
 				BC084C361A1FCE7600E68797 /* Pesticide.swift in Sources */,
 				BD649D6D1A202FA50030ECAF /* DeviceUtils.swift in Sources */,
 				BD649DA41A205D7D0030ECAF /* UIView+Pesticide.swift in Sources */,
@@ -560,6 +592,11 @@
 			isa = PBXTargetDependency;
 			target = BD361B6A1A1F8C6D006AE819 /* debugdrawer */;
 			targetProxy = BD361B811A1F8C6D006AE819 /* PBXContainerItemProxy */;
+		};
+		BDE813861A20928500D02B8D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			targetProxy = BDE813851A20928500D02B8D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -671,6 +708,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = debugdrawer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -685,6 +723,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = debugdrawer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

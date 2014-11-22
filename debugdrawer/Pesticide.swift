@@ -22,6 +22,7 @@ public class Pesticide {
         static var window = UIWindow()
         static var isSetup = false
         static var viewInspector: ViewInspector?
+        static var crosshairOverlay: CrosshairOverlay?
         static var hasCommandPrompt = false
     }
 
@@ -138,6 +139,15 @@ public class Pesticide {
                 }
             } else {
                 CV.viewInspector?.done()
+            }
+        })
+        Pesticide.addSwitch(false, name:"Crosshair View", block: { (on: Bool) in
+            if (on) {
+                CV.crosshairOverlay = CrosshairOverlay(frame: CV.window.bounds)
+                CV.window.rootViewController?.view.addSubview(CV.crosshairOverlay!)
+                self.toggle()
+            } else {
+                CV.crosshairOverlay?.removeFromSuperview()
             }
         })
 
