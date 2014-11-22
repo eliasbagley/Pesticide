@@ -129,5 +129,3 @@ The show touches tool shows a small blip at the touch location
 ## License
 
 Pesticide is released under the MIT license. See LICENSE for details
-=======
-Daniel's Test
