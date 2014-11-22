@@ -44,11 +44,11 @@ public class Pesticide {
         CV.debugVC.addRowControl(ButtonControl(name: name, block: block))
     }
     
-    public class func addSlider(name: String, block: (CGFloat) -> ()) {
+    public class func addSlider(name: String, block: Float -> ()) {
         CV.debugVC.addRowControl(SliderControl(name: name, block: block))
     }
     
-    public class func addDropdown(name: String, options: Array<AnyObject>, block: (option: AnyObject, index: Int) -> ()) {
+    public class func addDropdown(name: String, options: Array<String>, block: (option: String) -> ()) {
         CV.debugVC.addRowControl(DropDownControl(name: name, options:options, block: block))
     }
     

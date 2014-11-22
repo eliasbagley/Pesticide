@@ -57,9 +57,6 @@ class DebugTableController: UITableViewController {
         return cell
     }
     
-//    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        return 
-//    }
     // MARK: - Configure Cell
     
     func configureCell(cell:UITableViewCell, indexPath : NSIndexPath) {
@@ -83,5 +80,46 @@ class DebugTableController: UITableViewController {
     func addRowControl(rowControl : RowControl) {
         self.sectionObjects[0].rowObjects.append(rowControl)
         self.tableView.reloadData()
+    }
+    
+    func switchChanged(sender: UISwitch) {
+        if let indexPath = self.indexPathForCellSubview(sender) {
+            let sectionInfo = self.sectionObjects[indexPath.section]
+            if let control = sectionInfo.rowObjects[indexPath.row] as? SwitchControl {
+                control.executeBlock(sender.on)
+            }
+        }
+    }
+    
+    func sliderChanged(sender: UISlider) {
+        if let indexPath = self.indexPathForCellSubview(sender) {
+            let sectionInfo = self.sectionObjects[indexPath.section]
+            if let control = sectionInfo.rowObjects[indexPath.row] as? SliderControl {
+                control.executeBlock(sender.value)
+            }
+        }
+    }
+    
+    func buttonTapped(sender: UIButton) {
+        if let indexPath = self.indexPathForCellSubview(sender) {
+            let sectionInfo = self.sectionObjects[indexPath.section]
+            if let control = sectionInfo.rowObjects[indexPath.row] as? ButtonControl {
+                control.executeBlock()
+            }
+        }
+    }
+    
+    func editingEnded(sender: UITextField) {
+        if let indexPath = self.indexPathForCellSubview(sender) {
+            let sectionInfo = self.sectionObjects[indexPath.section]
+            if let control = sectionInfo.rowObjects[indexPath.row] as? TextInputControl {
+                control.executeBlock(sender.text)
+            }
+        }
+    }
+    
+    func indexPathForCellSubview(subview: UIView) -> NSIndexPath? {
+        let aPoint = self.tableView.convertPoint(CGPointZero, fromView: subview)
+        return self.tableView.indexPathForRowAtPoint(aPoint)
     }
 }
