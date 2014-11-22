@@ -87,7 +87,7 @@ class SampleViewController : UIViewController {
         self.enterButton.setTitle("Say Hello", forState: .Normal)
         self.enterButton.setTitleColor(UIColor.blueColor(), forState: .Normal)
         self.textField.placeholder = "Your Name"
-        self.coolLabel.text = "COOL LABEL"
+        self.coolLabel.text = " This label shouldn't be here"
         self.coolLabel.backgroundColor = .yellowColor()
         self.coolLabel.textColor = .blackColor()
         

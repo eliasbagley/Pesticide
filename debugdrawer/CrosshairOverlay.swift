@@ -34,7 +34,7 @@ class CrosshairOverlay : UIView {
 
         horizontal.frame = CGRectMake(0, 0, CGRectGetWidth(self.bounds), lineWidth)
         vertical.frame = CGRectMake(0, 0, lineWidth, CGRectGetHeight(self.bounds))
-        label.frame = CGRectMake(0, 15, 100, 30)
+        label.frame = CGRectMake(5, 10, 100, 30)
 
         self.addSubview(horizontal)
         self.addSubview(vertical)
