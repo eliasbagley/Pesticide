@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         Pesticide.setWindow(self.window!)
 #endif
-        self.startLogging()
+
         return true
     }
     
@@ -40,8 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Pesticide.toggle()
     }
 #endif
-    
-    
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -65,15 +63,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-    func startLogging () {
-        //TODO in live the level should be conditionally lower
-        DDLog.logLevel = .Verbose
-        DDLog.addLogger(DDTTYLogger.sharedInstance())
-        DDLog.addLogger(DDASLLogger.sharedInstance())
-        let fileLogger = DDFileLogger()
-        fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
-        fileLogger.logFileManager.maximumNumberOfLogFiles = 7
-        DDLog.addLogger(fileLogger)
-    }
 }
 

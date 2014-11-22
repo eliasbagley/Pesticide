@@ -67,13 +67,14 @@ public class Pesticide {
     }
     
     public class func setWindow(window :UIWindow) {
+        if (!CV.isSetup) {
+            Pesticide.setup()
+            
+        }
         CV.window = window
     }
     
     public class func toggle() {
-        if (!CV.isSetup) {
-            Pesticide.setup()
-        }
         var topVC :UIViewController = topViewController(CV.window.rootViewController!)
         if (topVC.isKindOfClass(DebugTableController)) {
             topVC.dismissViewControllerAnimated(true, completion: nil)
@@ -85,10 +86,13 @@ public class Pesticide {
     // MARK: private functions
     
     private class func setup() {
+        Pesticide.startLogging()
+        
         Pesticide.addLabel("date:", label: BuildUtils.getDateString())
         Pesticide.addLabel("version:", label: BuildUtils.getVersionString())
         Pesticide.addLabel("build:", label: BuildUtils.getBuildNumberString())
         Pesticide.addLabel("hash:", label: BuildUtils.getGitHash())
+        
         CV.isSetup = true
     }
     
@@ -98,5 +102,15 @@ public class Pesticide {
         } else {
             return rootController;
         }
+    }
+    
+    private class func startLogging () {
+        DDLog.logLevel = .Verbose
+        DDLog.addLogger(DDTTYLogger.sharedInstance())
+        DDLog.addLogger(DDASLLogger.sharedInstance())
+        let fileLogger = DDFileLogger()
+        fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
+        fileLogger.logFileManager.maximumNumberOfLogFiles = 7
+        DDLog.addLogger(fileLogger)
     }
 }
