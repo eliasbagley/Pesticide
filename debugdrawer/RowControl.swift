@@ -33,9 +33,9 @@ class SwitchControl : RowControl {
     var block : Bool -> ()
     var value : Bool
     
-    init (intialValue: Bool, name : String, block: Bool -> ()) {
+    init (initialValue: Bool, name : String, block: Bool -> ()) {
         self.block = block
-        self.value = intialValue
+        self.value = initialValue
         super.init(name: name, type: .Switch)
     }
     
@@ -49,9 +49,9 @@ class SliderControl : RowControl {
     var block : Float -> ()
     var value : Float
 
-    init (intialValue: Float, name : String, block: Float -> ()) {
+    init (initialValue: Float, name : String, block: Float -> ()) {
         self.block = block
-        self.value = intialValue
+        self.value = initialValue
         super.init(name: name, type: .Slider)
     }
     

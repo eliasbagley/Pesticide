@@ -29,7 +29,7 @@ class PesticideLogger: DDAbstractLogger {
                     }
                     self.textView!.text = logString + "\n"
                     self.textView?.scrollRangeToVisible(NSMakeRange(logString.utf16Count - 1, 1))
-                });
+                })
             }
         }
         return
