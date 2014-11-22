@@ -26,7 +26,6 @@
 		BCC48DF81A20301F00C2AB4F /* LabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC48DF61A20301F00C2AB4F /* LabelCell.swift */; };
 		BCC48DF91A20301F00C2AB4F /* LabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCC48DF71A20301F00C2AB4F /* LabelCell.xib */; };
 		BD361B711A1F8C6D006AE819 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD361B701A1F8C6D006AE819 /* AppDelegate.swift */; };
-		BD361B731A1F8C6D006AE819 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD361B721A1F8C6D006AE819 /* ViewController.swift */; };
 		BD361B761A1F8C6D006AE819 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD361B741A1F8C6D006AE819 /* Main.storyboard */; };
 		BD361B781A1F8C6D006AE819 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD361B771A1F8C6D006AE819 /* Images.xcassets */; };
 		BD361B7B1A1F8C6D006AE819 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD361B791A1F8C6D006AE819 /* LaunchScreen.xib */; };
@@ -37,6 +36,11 @@
 		BD649D6D1A202FA50030ECAF /* DeviceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD649D6C1A202FA50030ECAF /* DeviceUtils.swift */; };
 		BD649DA11A205D4D0030ECAF /* ViewInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD649DA01A205D4D0030ECAF /* ViewInspector.swift */; };
 		BD649DA41A205D7D0030ECAF /* UIView+Pesticide.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD649DA31A205D7D0030ECAF /* UIView+Pesticide.swift */; };
+		BDE8137E1A20855E00D02B8D /* CrosshairOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE8137D1A20855E00D02B8D /* CrosshairOverlay.swift */; };
+		BDE813821A20926600D02B8D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC758B271A20684C00BD0283 /* Alamofire.framework */; };
+		BDE813831A20928500D02B8D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC758B271A20684C00BD0283 /* Alamofire.framework */; };
+		BDE813841A20928500D02B8D /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BC758B271A20684C00BD0283 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BDE813891A20990E00D02B8D /* TouchTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE813881A20990E00D02B8D /* TouchTrackerView.swift */; };
 		D624A2E81A1FB3AB00B71EF5 /* DebugTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D624A2E71A1FB3AB00B71EF5 /* DebugTableController.swift */; };
 		D624A2EB1A1FB3B600B71EF5 /* CommandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D624A2E91A1FB3B600B71EF5 /* CommandCell.swift */; };
 		D624A2EC1A1FB3B600B71EF5 /* CommandCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D624A2EA1A1FB3B600B71EF5 /* CommandCell.xib */; };
@@ -74,7 +78,28 @@
 			remoteGlobalIDString = BD361B6A1A1F8C6D006AE819;
 			remoteInfo = debugdrawer;
 		};
+		BDE813851A20928500D02B8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC758B211A20684C00BD0283 /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BDE813871A20928500D02B8D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BDE813841A20928500D02B8D /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4A497ABC7E5B8C33E4743544 /* libPods-debugdrawer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-debugdrawer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,7 +126,6 @@
 		BD361B6B1A1F8C6D006AE819 /* debugdrawer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = debugdrawer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD361B6F1A1F8C6D006AE819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD361B701A1F8C6D006AE819 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BD361B721A1F8C6D006AE819 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BD361B751A1F8C6D006AE819 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BD361B771A1F8C6D006AE819 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BD361B7A1A1F8C6D006AE819 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -115,6 +139,8 @@
 		BD649D6C1A202FA50030ECAF /* DeviceUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceUtils.swift; sourceTree = "<group>"; };
 		BD649DA01A205D4D0030ECAF /* ViewInspector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInspector.swift; sourceTree = "<group>"; };
 		BD649DA31A205D7D0030ECAF /* UIView+Pesticide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Pesticide.swift"; sourceTree = "<group>"; };
+		BDE8137D1A20855E00D02B8D /* CrosshairOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrosshairOverlay.swift; sourceTree = "<group>"; };
+		BDE813881A20990E00D02B8D /* TouchTrackerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchTrackerView.swift; sourceTree = "<group>"; };
 		D624A2E71A1FB3AB00B71EF5 /* DebugTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugTableController.swift; sourceTree = "<group>"; };
 		D624A2E91A1FB3B600B71EF5 /* CommandCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandCell.swift; sourceTree = "<group>"; };
 		D624A2EA1A1FB3B600B71EF5 /* CommandCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommandCell.xib; sourceTree = "<group>"; };
@@ -130,6 +156,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDE813821A20926600D02B8D /* Alamofire.framework in Frameworks */,
+				BDE813831A20928500D02B8D /* Alamofire.framework in Frameworks */,
 				7E26CB1208067BF78297DBF6 /* libPods-debugdrawer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,6 +212,8 @@
 				BCC48DF71A20301F00C2AB4F /* LabelCell.xib */,
 				BC758B351A209B4E00BD0283 /* HeaderCell.swift */,
 				BC758B361A209B4E00BD0283 /* HeaderCell.xib */,
+				BDE8137D1A20855E00D02B8D /* CrosshairOverlay.swift */,
+				BDE813881A20990E00D02B8D /* TouchTrackerView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -235,7 +265,6 @@
 				D624A2E71A1FB3AB00B71EF5 /* DebugTableController.swift */,
 				BC084C301A1F9DB100E68797 /* Views */,
 				BD361B701A1F8C6D006AE819 /* AppDelegate.swift */,
-				BD361B721A1F8C6D006AE819 /* ViewController.swift */,
 				BD361B741A1F8C6D006AE819 /* Main.storyboard */,
 				BD361B771A1F8C6D006AE819 /* Images.xcassets */,
 				BD361B791A1F8C6D006AE819 /* LaunchScreen.xib */,
@@ -308,11 +337,13 @@
 				9EE5983AA9A375FE4683692B /* Copy Pods Resources */,
 				BD649D6A1A2028DB0030ECAF /* Copy git hash */,
 				BD649D6B1A202D320030ECAF /* Get Date */,
+				BDE813871A20928500D02B8D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				BC758B2B1A20688800BD0283 /* PBXTargetDependency */,
+				BDE813861A20928500D02B8D /* PBXTargetDependency */,
 			);
 			name = debugdrawer;
 			productName = debugdrawer;
@@ -525,6 +556,7 @@
 				BD649D691A2028210030ECAF /* BuildUtils.swift in Sources */,
 				BCC48DE71A20254000C2AB4F /* PesticideCell.swift in Sources */,
 				D624A2FA1A200C8B00B71EF5 /* RowControl.swift in Sources */,
+				BDE813891A20990E00D02B8D /* TouchTrackerView.swift in Sources */,
 				BCC48DEC1A202D9200C2AB4F /* ButtonCell.swift in Sources */,
 				BC084C321A1F9DE400E68797 /* DebugView.swift in Sources */,
 				BCC48DF41A202EB000C2AB4F /* SliderCell.swift in Sources */,
@@ -533,11 +565,11 @@
 				BD649D641A201D660030ECAF /* Preferences.swift in Sources */,
 				BD649D671A2025F00030ECAF /* Proxy.swift in Sources */,
 				BCC48DF81A20301F00C2AB4F /* LabelCell.swift in Sources */,
-				BD361B731A1F8C6D006AE819 /* ViewController.swift in Sources */,
 				D624A2F81A1FF2CA00B71EF5 /* PesticideLogger.swift in Sources */,
 				D624A2E81A1FB3AB00B71EF5 /* DebugTableController.swift in Sources */,
 				BC084C341A1F9FA800E68797 /* SampleViewController.swift in Sources */,
 				BCC48DF01A202E2100C2AB4F /* TextFieldCell.swift in Sources */,
+				BDE8137E1A20855E00D02B8D /* CrosshairOverlay.swift in Sources */,
 				BC084C361A1FCE7600E68797 /* Pesticide.swift in Sources */,
 				BD649D6D1A202FA50030ECAF /* DeviceUtils.swift in Sources */,
 				BD649DA41A205D7D0030ECAF /* UIView+Pesticide.swift in Sources */,
@@ -568,6 +600,11 @@
 			isa = PBXTargetDependency;
 			target = BD361B6A1A1F8C6D006AE819 /* debugdrawer */;
 			targetProxy = BD361B811A1F8C6D006AE819 /* PBXContainerItemProxy */;
+		};
+		BDE813861A20928500D02B8D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			targetProxy = BDE813851A20928500D02B8D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -679,6 +716,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = debugdrawer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -693,6 +731,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = debugdrawer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

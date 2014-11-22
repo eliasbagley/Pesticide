@@ -23,6 +23,8 @@ public class Pesticide {
         static var window = UIWindow()
         static var isSetup = false
         static var viewInspector: ViewInspector?
+        static var crosshairOverlay: CrosshairOverlay?
+        static var touchesOverlay : TouchTrackerView?
         static var hasCommandPrompt = false
     }
 
@@ -50,16 +52,16 @@ public class Pesticide {
         block?(components)
     }
     
-    public class func addSwitch(intialValue: Bool, name: String, block: Bool -> ()) {
-        CV.debugVC.addRowControl(SwitchControl(intialValue: intialValue, name: name, block: block))
+    public class func addSwitch(initialValue: Bool, name: String, block: Bool -> ()) {
+        CV.debugVC.addRowControl(SwitchControl(initialValue: initialValue, name: name, block: block))
     }
     
     public class func addButton(name: String, block: () -> ()) {
         CV.debugVC.addRowControl(ButtonControl(name: name, block: block))
     }
     
-    public class func addSlider(intialValue: Float, name: String, block: Float -> ()) {
-        CV.debugVC.addRowControl(SliderControl(intialValue: intialValue, name: name, block: block))
+    public class func addSlider(initialValue: Float, name: String, block: Float -> ()) {
+        CV.debugVC.addRowControl(SliderControl(initialValue: initialValue, name: name, block: block))
     }
     
     public class func addDropdown(initialValue: String, name: String, options: Dictionary<String,AnyObject>, block: (option: AnyObject) -> ()) {
@@ -141,6 +143,24 @@ public class Pesticide {
                 CV.viewInspector?.done()
             }
         })
+        Pesticide.addSwitch(false, name:"Crosshair View", block: { (on: Bool) in
+            if (on) {
+                CV.crosshairOverlay = CrosshairOverlay(frame: CV.window.bounds)
+                CV.window.rootViewController?.view.addSubview(CV.crosshairOverlay!)
+                self.toggle()
+            } else {
+                CV.crosshairOverlay?.removeFromSuperview()
+            }
+        })
+        Pesticide.addSwitch(false, name:"Show Touches", block: { (on: Bool) in
+            if (on) {
+                CV.touchesOverlay = TouchTrackerView(frame: CV.window.bounds)
+                CV.window.rootViewController?.view.addSubview(CV.touchesOverlay!)
+                self.toggle()
+            } else {
+                CV.touchesOverlay?.removeFromSuperview()
+            }
+        })
 
 
         // Network
@@ -153,7 +173,7 @@ public class Pesticide {
         if (rootController.presentedViewController != nil) {
             return topViewController(rootController.presentedViewController!)
         } else {
-            return rootController;
+            return rootController
         }
     }
     

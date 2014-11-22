@@ -103,7 +103,7 @@ enum Router: URLRequestConvertible {
         
         let URL = NSURL(string: Router.baseURLString)!
         let URLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(path))
-        URLRequest.HTTPMethod = method.rawValue;
+        URLRequest.HTTPMethod = method.rawValue
         
         return URLRequest
     }

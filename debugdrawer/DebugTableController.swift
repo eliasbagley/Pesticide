@@ -16,7 +16,7 @@ class DebugTableController: UITableViewController, UIPickerViewDelegate, UIPicke
     
     var sectionObjects = [SectionInfo()]
     let dropDownPicker = UIPickerView()
-    let consoleView = UITextView(frame: CGRectMake(0, 0, 320, 200));
+    let consoleView = UITextView(frame: CGRectMake(0, 0, 320, 200))
     var currentField : UITextField?
     
     override func viewDidLoad() {
@@ -124,7 +124,7 @@ class DebugTableController: UITableViewController, UIPickerViewDelegate, UIPicke
             let logString = NSString(data: logData, encoding: NSUTF8StringEncoding)
             self.consoleView.text = logString!
         }
-        let consoleLogger = PesticideLogger();
+        let consoleLogger = PesticideLogger()
         consoleLogger.textView = self.consoleView
         DDLog.addLogger(consoleLogger)
         logInfo("added log watcher")
