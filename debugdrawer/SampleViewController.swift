@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Rocketmade. All rights reserved.
 //
 
-class SampleViewController : UIViewController {
+class SampleViewController : UIViewController, UITextFieldDelegate {
     
     let textField: UITextField = UITextField()
     let enterButton: UIButton = UIButton()
@@ -69,6 +69,10 @@ class SampleViewController : UIViewController {
                 let newColor = option as UIColor
                 self.view.backgroundColor = newColor
                 })
+
+            Pesticide.addButton("Network Request", { () in
+                (UIApplication.sharedApplication().delegate as AppDelegate).makeNetworkRequest()
+            })
         #endif
         
         print("sample inited")
@@ -87,7 +91,7 @@ class SampleViewController : UIViewController {
         self.enterButton.setTitle("Say Hello", forState: .Normal)
         self.enterButton.setTitleColor(UIColor.blueColor(), forState: .Normal)
         self.textField.placeholder = "Your Name"
-        self.coolLabel.text = " This label shouldn't be here"
+        self.coolLabel.text = " This label is in the way"
         self.coolLabel.backgroundColor = .yellowColor()
         self.coolLabel.textColor = .blackColor()
         
@@ -95,6 +99,8 @@ class SampleViewController : UIViewController {
         self.enterButton.setTranslatesAutoresizingMaskIntoConstraints(false)
         self.label.setTranslatesAutoresizingMaskIntoConstraints(false)
         self.coolLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
+
+        self.textField.delegate = self
         
         self.textField.backgroundColor = .whiteColor()
         self.enterButton.backgroundColor = .whiteColor()
@@ -106,6 +112,11 @@ class SampleViewController : UIViewController {
         self.view.addSubview(self.coolLabel)
         
         self.applyConstraints()
+    }
+
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     func applyConstraints() {

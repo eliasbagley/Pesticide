@@ -10,21 +10,21 @@ import Foundation
 
 class Proxy {
     // creates a NSURLSessionConfiguration object from a string in the form host:port
-    class func createSessionConfiguration(hostAndPort: String) -> NSURLSessionConfiguration? {
+    class func createSessionConfiguration(hostAndPort: String) -> NSURLSessionConfiguration {
         let hostAndPortArr = hostAndPort.componentsSeparatedByString(":")
 
         if hostAndPortArr.count != 2 {
-            return nil
+            return NSURLSessionConfiguration.defaultSessionConfiguration()
         }
 
         let host = hostAndPortArr[0]
         let port = hostAndPortArr[1].toInt()
 
-        if let port = hostAndPortArr[1].toInt() {
-            return createSessionConfigurationFromHost(host, port: port)
+        if port != nil {
+            return createSessionConfigurationFromHost(host, port: port!)
         }
 
-        return nil
+        return NSURLSessionConfiguration.defaultSessionConfiguration()
     }
 
     // creates a NSURLSessionConfiguration object from a host and port

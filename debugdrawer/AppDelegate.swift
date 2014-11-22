@@ -24,18 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.addGestureRecognizer(threeFingerTap)
             
             Pesticide.setWindow(self.window!)
-            
-            Pesticide.addProxy({ (config: NSURLSessionConfiguration?) in
-                if let configuration = config {
-                    self.manager =  Alamofire.Manager(configuration: configuration)
-                    
-                    self.manager!.request(Router.ROOT).response { (request, response, data, error) in
-                        println(request)
-                        println(response)
-                        println(data)
-                        println(error)
-                    }
-                }
+
+
+            Pesticide.addProxy({ (config: NSURLSessionConfiguration) in
+                self.manager =  Alamofire.Manager(configuration: config)
             })
             
             Pesticide.addHeader("Custom Controls")
@@ -48,6 +40,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return true
+    }
+
+    func makeNetworkRequest() {
+        self.manager?.request(Router.ROOT).response { (request, response, data, error) in
+            println(request)
+            println(response)
+            println(data)
+            println(error)
+            Pesticide.log("Network call success")
+        }
     }
     
 #if DEBUG
@@ -81,9 +83,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 enum Router: URLRequestConvertible {
-    //    static let baseURLString = "http://httpbin.org"
-    static let baseURLString = "http://www.google.com"
-    
+    static let baseURLString = "http://httpbin.org"
+
     case ROOT
     
     var method: Alamofire.Method {
