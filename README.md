@@ -3,7 +3,7 @@ Pesticide
 
 Importing target with Git submodule
 
-Add debug-drawer-ios as a submodule by opening the Terminal, cd-ing into your top-level project directory, and entering the command git submodule add https://github.com/eliasbagley/debug-drawer-ios.git
+Add debug-drawer-ios as a submodule by opening the Terminal, cd-ing into your top-level project directory, and entering the command git submodule add https://github.com/eliasbagley/Pesticide.git
 Open the debug-drawer-ios folder, and drag debugrawer.xcodeproj into the file navigator of your app project.
 In Xcode, navigate to the target configuration window by clicking on the blue project icon, and selecting the application target under the "Targets" heading in the sidebar.
 Ensure that the deployment target of debudrawer.xcodeproj matches that of the application target.
