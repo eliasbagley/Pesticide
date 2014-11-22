@@ -18,12 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        var rootView = SampleViewController()
-        
-        if let window = self.window {
-            window.rootViewController = rootView
-        }
-        
         #if DEBUG
             let threeFingerTap = UITapGestureRecognizer(target: self, action: Selector("threeFingerTap"))
             threeFingerTap.numberOfTouchesRequired = 3
@@ -43,7 +37,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     }
                 }
             })
+            
+            Pesticide.addHeader("Custom Controls")
         #endif
+        
+        var rootView = SampleViewController()
+        
+        if let window = self.window {
+            window.rootViewController = rootView
+        }
         
         return true
     }
