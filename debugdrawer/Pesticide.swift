@@ -120,15 +120,15 @@ public class Pesticide {
         // Build information
         Pesticide.addHeader("Build Information")
 
-        Pesticide.addLabel("Date:", label: BuildUtils.getDateString())
-        Pesticide.addLabel("Version:", label: BuildUtils.getVersionString())
-        Pesticide.addLabel("Build:", label: BuildUtils.getBuildNumberString())
-        Pesticide.addLabel("Hash:", label: BuildUtils.getGitHash())
+        Pesticide.addLabel("Date", label: BuildUtils.getDateString())
+        Pesticide.addLabel("Version", label: BuildUtils.getVersionString())
+        Pesticide.addLabel("Build", label: BuildUtils.getBuildNumberString())
+        Pesticide.addLabel("Hash", label: BuildUtils.getGitHash())
 
         // Device information
         Pesticide.addHeader("Device Information")
-        Pesticide.addLabel("Device:", label: DeviceUtils.getDeviceVersionString())
-        Pesticide.addLabel("Resolution:", label: DeviceUtils.getResolutionString())
+        Pesticide.addLabel("Device", label: DeviceUtils.getDeviceVersionString())
+        Pesticide.addLabel("Resolution", label: DeviceUtils.getResolutionString())
 
         // User interface
         Pesticide.addHeader("User Interface")
