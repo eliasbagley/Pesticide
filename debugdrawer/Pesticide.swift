@@ -26,6 +26,8 @@ public class Pesticide {
         static var window = UIWindow()
         static var isSetup = false
         static var delegate = PesticideDelegate?()
+        static var viewInspector: ViewInspector?
+//        static var rootViewController: UIViewController?
     }
 
     public class func log(message: String) {
@@ -66,6 +68,10 @@ public class Pesticide {
     public class func addTextInput(name: String, block: (String) -> ()) {
         CV.debugVC.addRowControl(TextInputControl(name: name, block: block))
     }
+
+    public class func addHeader(name: String) {
+        CV.debugVC.addRowControl(LabelControl(name: name, label: ""))
+    }
     
     public class func debugViewController()->UIViewController {
         return CV.debugVC
@@ -74,6 +80,9 @@ public class Pesticide {
     public class func toggle() {
         var topVC :UIViewController = topViewController(CV.window.rootViewController!)
         if (topVC.isKindOfClass(DebugTableController)) {
+//            CV.viewInspector?.done()
+//            CV.viewInspector?.root.removeFromSuperview()
+
             topVC.dismissViewControllerAnimated(true, completion: nil)
         } else {
             topVC.presentViewController(CV.debugVC, animated: true, completion: nil)
@@ -105,12 +114,31 @@ public class Pesticide {
     
     private class func setup() {
         Pesticide.startLogging()
-        
+
+        // Build information
+        Pesticide.addHeader("Build Information")
         Pesticide.addLabel("date:", label: BuildUtils.getDateString())
         Pesticide.addLabel("version:", label: BuildUtils.getVersionString())
         Pesticide.addLabel("build:", label: BuildUtils.getBuildNumberString())
         Pesticide.addLabel("hash:", label: BuildUtils.getGitHash())
-        
+
+        // Device information
+        Pesticide.addHeader("Device Information")
+        Pesticide.addLabel("device:", label: DeviceUtils.getDeviceVersionString())
+        Pesticide.addLabel("resolution:", label: DeviceUtils.getResolutionString())
+
+        // User interface
+        Pesticide.addHeader("User Interface")
+        Pesticide.addButton("View Hierarchy", block: { () -> () in
+            if let root = CV.window.rootViewController?.view {
+                CV.viewInspector = ViewInspector(rootView: root)
+//                CV.window.addSubview(root)
+                self.toggle()
+            }
+        })
+
+        // Network
+        Pesticide.addHeader("Network")
         Pesticide.addTextInput("proxy", block: { (hostAndPort: String) in
             let config = Proxy.createSessionConfiguration(hostAndPort)
             CV.delegate?.didFinishSettingProxy(config)

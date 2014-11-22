@@ -11,15 +11,24 @@ import UIKit
 
 class ViewInspector {
     private var removedViews: [UIView] = []
+    var root: UIView
 
     init(rootView: UIView) {
+        root = rootView
         self.recurseThroughSubviews(rootView);
     }
 
     func recurseThroughSubviews(rootView: UIView) {
-        self.addDeleteBlock(rootView)
+        println("recursing")
+        // save default values
+        rootView.saveDefaults()
+
         rootView.layer.borderWidth = 2.0
-        rootView.layer.borderColor = UIColor.redColor().CGColor
+//        rootView.layer.borderColor = UIColor.redColor().CGColor
+        rootView.userInteractionEnabled = true
+
+
+        self.addDeleteBlock(rootView)
 
         for subview in rootView.subviews {
             self.recurseThroughSubviews(subview as UIView)
@@ -35,20 +44,35 @@ class ViewInspector {
         let view = tapGesture.view!
         if (view.allSubviewsInvisble()) {
             self.removedViews.append(view)
-            view.hidden = true
+            view.alpha = 0
+            view.userInteractionEnabled = false
         }
     }
 
     @objc func undo() {
         if (removedViews.count > 0) {
             let last = removedViews.removeLast()
-            last.hidden = false
+            last.restoreDefaults()
+            last.userInteractionEnabled = true
         }
     }
 
     func undoAll() {
         while (removedViews.count > 0) {
             undo()
+        }
+    }
+
+    // call this to return view hierarchy to original
+    func done() {
+        done(root)
+    }
+
+    func done(rootView: UIView) {
+        rootView.restoreDefaults()
+
+        for subview in rootView.subviews {
+            done(subview as UIView)
         }
     }
     
