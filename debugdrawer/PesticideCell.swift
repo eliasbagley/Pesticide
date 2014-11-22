@@ -13,6 +13,7 @@ class PesticideCell : UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = UITableViewCellSelectionStyle.None
+        self.backgroundColor = UIColor.backgroundColor()
     }
     
     func setName (name: String){

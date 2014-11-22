@@ -12,6 +12,7 @@ class HeaderCell: PesticideCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.backgroundColor = UIColor.darkGrayColor()
         // Initialization code
     }
 
