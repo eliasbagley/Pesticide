@@ -39,6 +39,7 @@
 		BDE813821A20926600D02B8D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC758B271A20684C00BD0283 /* Alamofire.framework */; };
 		BDE813831A20928500D02B8D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC758B271A20684C00BD0283 /* Alamofire.framework */; };
 		BDE813841A20928500D02B8D /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BC758B271A20684C00BD0283 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BDE813891A20990E00D02B8D /* TouchTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE813881A20990E00D02B8D /* TouchTrackerView.swift */; };
 		D624A2E81A1FB3AB00B71EF5 /* DebugTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D624A2E71A1FB3AB00B71EF5 /* DebugTableController.swift */; };
 		D624A2EB1A1FB3B600B71EF5 /* CommandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D624A2E91A1FB3B600B71EF5 /* CommandCell.swift */; };
 		D624A2EC1A1FB3B600B71EF5 /* CommandCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D624A2EA1A1FB3B600B71EF5 /* CommandCell.xib */; };
@@ -137,6 +138,7 @@
 		BD649DA01A205D4D0030ECAF /* ViewInspector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInspector.swift; sourceTree = "<group>"; };
 		BD649DA31A205D7D0030ECAF /* UIView+Pesticide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Pesticide.swift"; sourceTree = "<group>"; };
 		BDE8137D1A20855E00D02B8D /* CrosshairOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrosshairOverlay.swift; sourceTree = "<group>"; };
+		BDE813881A20990E00D02B8D /* TouchTrackerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchTrackerView.swift; sourceTree = "<group>"; };
 		D624A2E71A1FB3AB00B71EF5 /* DebugTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugTableController.swift; sourceTree = "<group>"; };
 		D624A2E91A1FB3B600B71EF5 /* CommandCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandCell.swift; sourceTree = "<group>"; };
 		D624A2EA1A1FB3B600B71EF5 /* CommandCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommandCell.xib; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				BCC48DF61A20301F00C2AB4F /* LabelCell.swift */,
 				BCC48DF71A20301F00C2AB4F /* LabelCell.xib */,
 				BDE8137D1A20855E00D02B8D /* CrosshairOverlay.swift */,
+				BDE813881A20990E00D02B8D /* TouchTrackerView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				BD649D691A2028210030ECAF /* BuildUtils.swift in Sources */,
 				BCC48DE71A20254000C2AB4F /* PesticideCell.swift in Sources */,
 				D624A2FA1A200C8B00B71EF5 /* RowControl.swift in Sources */,
+				BDE813891A20990E00D02B8D /* TouchTrackerView.swift in Sources */,
 				BCC48DEC1A202D9200C2AB4F /* ButtonCell.swift in Sources */,
 				BC084C321A1F9DE400E68797 /* DebugView.swift in Sources */,
 				BCC48DF41A202EB000C2AB4F /* SliderCell.swift in Sources */,
