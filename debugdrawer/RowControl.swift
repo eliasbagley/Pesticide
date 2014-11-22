@@ -46,7 +46,7 @@ class SwitchControl : RowControl {
 class SliderControl : RowControl {
     
     var block : Float -> ()
-    var value = 0.0
+    var value = Float(0.0)
 
     init (name : String, block: Float -> ()) {
         self.block = block
@@ -106,12 +106,22 @@ class TextInputControl : RowControl {
 
 }
 
-class DropDownControl : TextInputControl {
+class DropDownControl : RowControl {
     
-    var options : Array<AnyObject>
-    init (name : String, options: Array<String>, block : (option: String) -> ()) {
+    var options : Dictionary<String,AnyObject>
+    var block : AnyObject -> ()
+    var value = ""
+    var optionStrings : Array<String>
+    
+    init (name : String, options: Dictionary<String,AnyObject>, block : (option: AnyObject) -> ()) {
         self.options = options
-        super.init(name: name, type: .DropDown, block: block)
+        self.optionStrings = [String](options.keys)
+        self.block = block
+        super.init(name: name, type: .DropDown)
+    }
+    
+    func executeBlock(input: String) {
+        self.block(self.options[input]!)
     }
     
 }
