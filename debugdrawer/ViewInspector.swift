@@ -45,5 +45,11 @@ class ViewInspector {
             last.hidden = false
         }
     }
+
+    func undoAll() {
+        while (removedViews.count > 0) {
+            undo()
+        }
+    }
     
 }
