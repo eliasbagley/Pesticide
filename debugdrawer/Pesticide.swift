@@ -27,6 +27,7 @@ public class Pesticide {
         static var isSetup = false
         static var delegate = PesticideDelegate?()
         static var viewInspector: ViewInspector?
+        static var hasCommandPrompt = false
 //        static var rootViewController: UIViewController?
     }
 
@@ -35,6 +36,15 @@ public class Pesticide {
     }
     
     public class func addCommand(commandName: String, block: Array<String> -> ()) {
+        if !CV.hasCommandPrompt {
+            self.addTextInput("Pest Commands", block: {(command: String) in
+                if command.utf16Count < 1 {
+                    return
+                }
+                self.runFullCommand(command)
+            })
+            CV.hasCommandPrompt = true
+        }
         CV.commands[commandName] = block
     }
     
