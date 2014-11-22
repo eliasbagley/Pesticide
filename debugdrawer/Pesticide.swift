@@ -77,8 +77,6 @@ public class Pesticide {
     public class func toggle() {
         var topVC :UIViewController = topViewController(CV.window.rootViewController!)
         if (topVC.isKindOfClass(DebugTableController)) {
-//            CV.viewInspector?.done()
-//            CV.viewInspector?.root.removeFromSuperview()
 
             topVC.dismissViewControllerAnimated(true, completion: nil)
         } else {
@@ -122,13 +120,17 @@ public class Pesticide {
 
         // User interface
         Pesticide.addHeader("User Interface")
-        Pesticide.addButton("View Hierarchy", block: { () -> () in
-            if let root = CV.window.rootViewController?.view {
-                CV.viewInspector = ViewInspector(rootView: root)
-//                CV.window.addSubview(root)
-                self.toggle()
+        Pesticide.addSwitch(false, name:"Hierarchy Viewer", block: { (on: Bool) in
+            if (on) {
+                if let root = CV.window.rootViewController?.view {
+                    CV.viewInspector = ViewInspector(rootView: root)
+                    self.toggle()
+                }
+            } else {
+                CV.viewInspector?.done()
             }
         })
+
 
         // Network
         Pesticide.addHeader("Network")

@@ -19,7 +19,6 @@ class ViewInspector {
     }
 
     func recurseThroughSubviews(rootView: UIView) {
-        println("recursing")
         // save default values
         rootView.saveDefaults()
 
