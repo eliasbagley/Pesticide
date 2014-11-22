@@ -50,7 +50,7 @@ class SampleViewController : UIViewController {
                 }
             })
             
-            Pesticide.addButton("crash", { () in
+            Pesticide.addButton("Panic Button", { () in
                 assert(false, "SOME CRASH AHHHH!!!!")
             })
             

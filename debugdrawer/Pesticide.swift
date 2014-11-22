@@ -12,6 +12,7 @@ public enum PesticideControlType {
     case Slider
     case Dropdown
     case Label
+    case Header
 }
 
 public class Pesticide {
@@ -23,6 +24,7 @@ public class Pesticide {
         static var isSetup = false
         static var viewInspector: ViewInspector?
         static var crosshairOverlay: CrosshairOverlay?
+        static var touchesOverlay : TouchTrackerView?
         static var hasCommandPrompt = false
     }
 
@@ -75,7 +77,7 @@ public class Pesticide {
     }
 
     public class func addHeader(name: String) {
-        CV.debugVC.addRowControl(LabelControl(name: name, label: ""))
+        CV.debugVC.addRowControl(HeaderControl(name: name))
     }
     
     public class func addProxy(block: (NSURLSessionConfiguration?) -> ()) {
@@ -146,6 +148,15 @@ public class Pesticide {
                 self.toggle()
             } else {
                 CV.crosshairOverlay?.removeFromSuperview()
+            }
+        })
+        Pesticide.addSwitch(false, name:"Show Touches", block: { (on: Bool) in
+            if (on) {
+                CV.touchesOverlay = TouchTrackerView(frame: CV.window.bounds)
+                CV.window.rootViewController?.view.addSubview(CV.touchesOverlay!)
+                self.toggle()
+            } else {
+                CV.touchesOverlay?.removeFromSuperview()
             }
         })
 

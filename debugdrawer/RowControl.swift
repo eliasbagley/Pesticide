@@ -15,6 +15,7 @@ enum ControlType : String {
     case DropDown = "DropDownCell"
     case Label = "LabelCell"
     case TextInput = "TextFieldCell"
+    case Header = "HeaderCell"
 }
 
 class RowControl: NSObject {
@@ -85,6 +86,12 @@ class LabelControl : RowControl {
         super.init(name: name, type: .Label)
     }
     
+}
+
+class HeaderControl : RowControl {
+    init (name: String) {
+        super.init(name: name, type: .Header)
+    }
 }
 
 class TextInputControl : RowControl {

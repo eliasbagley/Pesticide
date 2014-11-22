@@ -64,20 +64,4 @@ class CrosshairOverlay : UIView {
 
         label.text = "\(point.x), \(point.y)"
     }
-
-//    func applyConstraints() {
-//        var viewBindings = NSMutableDictionary()
-//        viewBindings.setValue(self.vertical, forKey: "vertical")
-//        viewBindings.setValue(self.horizontal, forKey: "horizontal")
-//
-//        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-//            "V:|[vertical]|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewBindings))
-//        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-//            "[vertical(3)]", options: NSLayoutFormatOptions(0), metrics: nil, views: viewBindings))
-//
-//        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-//            "|[horizontal]|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewBindings))
-//        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-//            "V:[horizontal(3)]", options: NSLayoutFormatOptions(0), metrics: nil, views: viewBindings))
-//    }
 }
