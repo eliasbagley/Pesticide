@@ -14,10 +14,6 @@ public enum PesticideControlType {
     case Label
 }
 
-public protocol PesticideDelegate: class {
-    func didFinishSettingProxy(config :NSURLSessionConfiguration?)
-}
-
 public class Pesticide {
     
     private struct CV {
@@ -25,9 +21,7 @@ public class Pesticide {
         static var commands = Dictionary<String, Array<String> -> ()>()
         static var window = UIWindow()
         static var isSetup = false
-        static var delegate = PesticideDelegate?()
         static var viewInspector: ViewInspector?
-//        static var rootViewController: UIViewController?
     }
 
     public class func log(message: String) {
@@ -73,8 +67,11 @@ public class Pesticide {
         CV.debugVC.addRowControl(LabelControl(name: name, label: ""))
     }
     
-    public class func debugViewController()->UIViewController {
-        return CV.debugVC
+    public class func addProxy(block: (NSURLSessionConfiguration?) -> ()) {
+        Pesticide.addTextInput("proxy", block: { (hostAndPort: String) in
+            let config = Proxy.createSessionConfiguration(hostAndPort)
+            block(config)
+        })
     }
     
     public class func toggle() {
@@ -100,10 +97,6 @@ public class Pesticide {
         CV.window = window
     }
     
-    public class func setDelegate(delegate :PesticideDelegate?) {
-        CV.delegate = delegate
-    }
-
     
     
     
@@ -141,10 +134,6 @@ public class Pesticide {
 
         // Network
         Pesticide.addHeader("Network")
-        Pesticide.addTextInput("proxy", block: { (hostAndPort: String) in
-            let config = Proxy.createSessionConfiguration(hostAndPort)
-            CV.delegate?.didFinishSettingProxy(config)
-        })
         
         CV.isSetup = true
     }
