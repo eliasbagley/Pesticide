@@ -3,12 +3,12 @@ Pesticide
 
 Importing target with Git submodule
 
-Add debug-drawer-ios as a submodule by opening the Terminal, cd-ing into your top-level project directory, and entering the command git submodule add https://github.com/eliasbagley/Pesticide.git
-Open the debug-drawer-ios folder, and drag debugrawer.xcodeproj into the file navigator of your app project.
+Add pesticide as a submodule by opening the Terminal, cd-ing into your top-level project directory, and entering the command git submodule add https://github.com/eliasbagley/Pesticide.git
+Open the pesticide folder, and drag pesticide.xcodeproj into the file navigator of your app project.
 In Xcode, navigate to the target configuration window by clicking on the blue project icon, and selecting the application target under the "Targets" heading in the sidebar.
-Ensure that the deployment target of debudrawer.xcodeproj matches that of the application target.
+Ensure that the deployment target of pesticide.xcodeproj matches that of the application target.
 In the tab bar at the top of that window, open the "Build Phases" panel.
-Expand the "Target Dependencies" group, and add debugdrawer
+Expand the "Target Dependencies" group, and add pesticide
 
 Setup Pesticide
 
@@ -20,12 +20,12 @@ to setup Pesticide
 
 Using Pesticide
 
-You can log to the debug drawer using
+You can log to the pesticide live console using
 ```
 Pesticide.log("some message")
 ```
 
-You can add custom controls to the drawer using any of:
+You can add custom controls to the debug view controller using any of:
 
 ```
 Pesticide.addSwitch(intialValue: Bool, name: String, block: Bool -> ())
