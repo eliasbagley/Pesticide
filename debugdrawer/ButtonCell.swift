@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ButtonCell: UITableViewCell {
+class ButtonCell: PesticideCell {
 
     @IBOutlet weak var button: UIButton!
     
@@ -23,4 +23,8 @@ class ButtonCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    override func setName (name: String){
+        self.button.setTitle(name, forState: UIControlState.Normal)
+    }
+
 }

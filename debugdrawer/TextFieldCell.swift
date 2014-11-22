@@ -8,21 +8,14 @@
 
 import UIKit
 
-class TextFieldCell: UITableViewCell {
+class TextFieldCell: PesticideCell {
 
     @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var nameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         textField.placeholder = "Value"
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }
