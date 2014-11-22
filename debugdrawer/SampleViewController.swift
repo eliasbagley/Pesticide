@@ -80,7 +80,7 @@ class SampleViewController : UIViewController {
     }
     
     func setupView() {
-        self.view.backgroundColor = .blueColor()
+        self.view.backgroundColor = UIColor(red: 0.16, green: 0.16, blue: 0.18, alpha: 1)
         
         self.enterButton.setTitle("Say Hello", forState: .Normal)
         self.enterButton.setTitleColor(UIColor.blueColor(), forState: .Normal)

@@ -12,6 +12,7 @@ import UIKit
 var kAlphaAssociationKey = "kAlphaAssociationKey"
 var kBorderWidthAssociationKey = "kBorderWidthAssociationKey"
 var kUserInteractionAssociationKey = "kUserInteractionAssociationKey"
+var kBorderColorAssociationKey = "kBorderColorAssociationKey"
 
 extension UIView {
     func allSubviewsInvisble() -> Bool {
@@ -66,15 +67,26 @@ extension UIView {
         }
     }
 
+    var defaultBorderColor:UIColor {
+        get {
+            return objc_getAssociatedObject(self, &kBorderColorAssociationKey) as UIColor
+        }
+        set(newValue) {
+            objc_setAssociatedObject(self, &kBorderColorAssociationKey, newValue, UInt(OBJC_ASSOCIATION_COPY))
+        }
+    }
+
     func saveDefaults() {
         self.defaultAlpha = Float(self.alpha)
         self.defaultUserInteractionBool = self.userInteractionEnabled
         self.defaultBorderWidth = Float(self.layer.borderWidth)
+        self.defaultBorderColor = UIColor(CGColor:self.layer.borderColor)
     }
 
     func restoreDefaults() {
         self.alpha = CGFloat(self.defaultAlpha)
         self.userInteractionEnabled = self.defaultUserInteractionBool
         self.layer.borderWidth = CGFloat(self.defaultBorderWidth)
+        self.layer.borderColor = self.defaultBorderColor.CGColor
     }
 }
