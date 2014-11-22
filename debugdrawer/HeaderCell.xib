@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -16,7 +16,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="et4-oR-dRg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="53.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <nil key="highlightedColor"/>
@@ -24,15 +24,32 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="et4-oR-dRg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Avn-LT-BAE"/>
+                    <constraint firstAttribute="trailing" secondItem="et4-oR-dRg" secondAttribute="trailing" id="MfO-ww-Usd"/>
+                    <constraint firstItem="et4-oR-dRg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="VJZ-p2-i0M"/>
                     <constraint firstItem="et4-oR-dRg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="aKE-gf-nxu"/>
+                    <constraint firstAttribute="bottom" secondItem="et4-oR-dRg" secondAttribute="bottom" id="cBh-j2-GHU"/>
                     <constraint firstAttribute="bottom" secondItem="et4-oR-dRg" secondAttribute="bottom" id="hdX-i4-YYu"/>
                     <constraint firstItem="et4-oR-dRg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="jGM-6v-z31"/>
                     <constraint firstAttribute="trailingMargin" secondItem="et4-oR-dRg" secondAttribute="trailing" id="kEc-LY-YQp"/>
                     <constraint firstAttribute="trailing" secondItem="et4-oR-dRg" secondAttribute="trailing" id="kvV-gj-otT"/>
                     <constraint firstAttribute="bottomMargin" secondItem="et4-oR-dRg" secondAttribute="bottom" id="oIk-a5-bfk"/>
+                    <constraint firstItem="et4-oR-dRg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="qaN-mt-HQ6"/>
                     <constraint firstItem="et4-oR-dRg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="spE-wd-bSa"/>
                     <constraint firstAttribute="bottom" secondItem="et4-oR-dRg" secondAttribute="bottom" id="vOE-Wr-Z1K"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="Avn-LT-BAE"/>
+                        <exclude reference="aKE-gf-nxu"/>
+                        <exclude reference="hdX-i4-YYu"/>
+                        <exclude reference="jGM-6v-z31"/>
+                        <exclude reference="kEc-LY-YQp"/>
+                        <exclude reference="kvV-gj-otT"/>
+                        <exclude reference="oIk-a5-bfk"/>
+                        <exclude reference="spE-wd-bSa"/>
+                        <exclude reference="vOE-Wr-Z1K"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
