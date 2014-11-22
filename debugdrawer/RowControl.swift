@@ -31,10 +31,11 @@ class RowControl: NSObject {
 class SwitchControl : RowControl {
     
     var block : Bool -> ()
-    var value = false
+    var value : Bool
     
-    init (name : String, block: Bool -> ()) {
+    init (intialValue: Bool, name : String, block: Bool -> ()) {
         self.block = block
+        self.value = intialValue
         super.init(name: name, type: .Switch)
     }
     
@@ -46,10 +47,11 @@ class SwitchControl : RowControl {
 class SliderControl : RowControl {
     
     var block : Float -> ()
-    var value = Float(0.0)
+    var value : Float
 
-    init (name : String, block: Float -> ()) {
+    init (intialValue: Float, name : String, block: Float -> ()) {
         self.block = block
+        self.value = intialValue
         super.init(name: name, type: .Slider)
     }
     
@@ -110,10 +112,11 @@ class DropDownControl : RowControl {
     
     var options : Dictionary<String,AnyObject>
     var block : AnyObject -> ()
-    var value = ""
+    var value : String
     var optionStrings : Array<String>
     
-    init (name : String, options: Dictionary<String,AnyObject>, block : (option: AnyObject) -> ()) {
+    init (initialValue: NSString, name : String, options: Dictionary<String,AnyObject>, block : (option: AnyObject) -> ()) {
+        self.value = initialValue
         self.options = options
         self.optionStrings = [String](options.keys)
         self.block = block

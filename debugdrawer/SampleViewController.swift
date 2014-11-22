@@ -31,7 +31,7 @@ class SampleViewController : UIViewController {
                 assert(false, "SOME CRASH AHHHH!!!!")
             })
             
-            Pesticide.addSlider("alpha", block: { (value :Float) in
+            Pesticide.addSlider(Float(self.view.alpha),name:"alpha", block: { (value :Float) in
                 let currentColor = self.view.backgroundColor
                 self.view.alpha = CGFloat(value)
             })
@@ -40,7 +40,7 @@ class SampleViewController : UIViewController {
                 self.label.text = text
             })
             
-            Pesticide.addDropdown("color", options: ["Black":UIColor.blackColor(),"Blue":UIColor.blueColor(),"Red":UIColor.redColor(),"Green":UIColor.greenColor()], block:{(option:AnyObject) in
+            Pesticide.addDropdown("Blue",name: "color", options: ["Black":UIColor.blackColor(),"Blue":UIColor.blueColor(),"Red":UIColor.redColor(),"Green":UIColor.greenColor()], block:{(option:AnyObject) in
                 let newColor = option as UIColor
                 self.view.backgroundColor = newColor
                 })
