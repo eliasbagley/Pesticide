@@ -12,6 +12,7 @@ public enum PesticideControlType {
     case Slider
     case Dropdown
     case Label
+    case Header
 }
 
 public class Pesticide {
@@ -76,7 +77,7 @@ public class Pesticide {
     }
 
     public class func addHeader(name: String) {
-        CV.debugVC.addRowControl(LabelControl(name: name, label: ""))
+        CV.debugVC.addRowControl(HeaderControl(name: name))
     }
     
     public class func addProxy(block: (NSURLSessionConfiguration?) -> ()) {
@@ -112,12 +113,10 @@ public class Pesticide {
     
     
     
-    
 // MARK: private functions
     
     private class func setup() {
-        Pesticide.startLogging()
-
+        self.setupLogging()
         // Build information
         Pesticide.addHeader("Build Information")
         Pesticide.addLabel("date:", label: BuildUtils.getDateString())
@@ -166,6 +165,35 @@ public class Pesticide {
         Pesticide.addHeader("Network")
         
         CV.isSetup = true
+    }
+    
+    private class func setupLogging () {
+        Pesticide.startLogging()
+        //Logging
+        Pesticide.addHeader("Logging")
+        
+        let logOptions = ["All":"All","Verbose":"Verbose","Debug":"Debug","Info":"Info","Warning":"Warning","Error":"Error","Off":"Off"];
+        Pesticide.addDropdown("Verbose", name: "Log Level", options: logOptions, block: {(option:AnyObject) in
+            let newLevel = option as String
+            switch newLevel {
+            case "All":
+                DDLog.logLevel = .All
+            case "Verbose":
+                DDLog.logLevel = .Verbose
+            case "Debug":
+                DDLog.logLevel = .Debug
+            case "Info":
+                DDLog.logLevel = .Info
+            case "Warning":
+                DDLog.logLevel = .Warning
+            case "Error":
+                DDLog.logLevel = .Error
+            case "Off":
+                DDLog.logLevel = .Off
+            default:
+                DDLog.logLevel = .Verbose
+            }
+        })
     }
     
     private class func topViewController(rootController :UIViewController)->UIViewController {

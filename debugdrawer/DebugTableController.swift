@@ -28,7 +28,7 @@ class DebugTableController: UITableViewController, UIPickerViewDelegate, UIPicke
         self.consoleView.textContainerInset = UIEdgeInsetsMake(25, 0, 0, 0)
         self.consoleView.textColor = UIColor.whiteColor()
         self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.Interactive
-        let cellIds : Array<ControlType> = [.Switch,.Slider,.Button,.TextInput,.Label]
+        let cellIds : Array<ControlType> = [.Switch,.Slider,.Button,.TextInput,.Label,.Header]
         for type in cellIds {
             self.tableView.registerNib(UINib(nibName: type.rawValue, bundle: nil), forCellReuseIdentifier:type.rawValue)
         }
@@ -112,6 +112,8 @@ class DebugTableController: UITableViewController, UIPickerViewDelegate, UIPicke
             let labelCell = cell as LabelCell
             let labelControl = rowControl as LabelControl
             labelCell.label.text = labelControl.label
+        case .Header:
+            break
         }
     }
     
