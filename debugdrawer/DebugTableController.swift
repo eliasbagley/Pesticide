@@ -25,6 +25,7 @@ class DebugTableController: UITableViewController, UIPickerViewDelegate, UIPicke
         self.dropDownPicker.dataSource = self
         self.consoleView.editable = false
         self.consoleView.backgroundColor = UIColor.darkGrayColor()
+        self.consoleView.textContainerInset = UIEdgeInsetsMake(25, 0, 0, 0)
         self.consoleView.textColor = UIColor.whiteColor()
         self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.Interactive
         let cellIds : Array<ControlType> = [.Switch,.Slider,.Button,.TextInput,.Label,.Header]

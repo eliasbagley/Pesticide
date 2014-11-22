@@ -23,9 +23,8 @@ class ViewInspector {
         rootView.saveDefaults()
 
         rootView.layer.borderWidth = 2.0
-//        rootView.layer.borderColor = UIColor.redColor().CGColor
+        rootView.layer.borderColor = UIColor.redColor().CGColor
         rootView.userInteractionEnabled = true
-
 
         self.addDeleteBlock(rootView)
 
