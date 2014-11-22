@@ -73,3 +73,12 @@ die, die, die
 die, die, die
 
 in the live view of the pesticide log
+
+## Contributors
+- Elias Bagley
+- Abraham Hunt
+- Daniel Gubler
+
+## License
+
+Pesticide is released under the MIT license. See LICENSE for details
