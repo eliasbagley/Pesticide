@@ -31,9 +31,9 @@ class SampleViewController : UIViewController {
                 assert(false, "SOME CRASH AHHHH!!!!")
             })
             
-            Pesticide.addSlider("alpha", block: { (value :CGFloat) in
+            Pesticide.addSlider("alpha", block: { (value :Float) in
                 let currentColor = self.view.backgroundColor
-                self.view.backgroundColor = currentColor?.colorWithAlphaComponent(value)
+                self.view.backgroundColor = currentColor?.colorWithAlphaComponent(CGFloat(value))
             })
             
             Pesticide.addTextInput("auto layout", block: { (text: String) in

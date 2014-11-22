@@ -14,7 +14,7 @@ class SectionInfo: NSObject {
 
 class DebugTableController: UITableViewController {
     
-    var sectionObjects = Array<SectionInfo>()
+    var sectionObjects = [SectionInfo()]
     let consoleView = UITextView(frame: CGRectMake(0, 0, 320, 200));
     
     override func viewDidLoad() {
@@ -22,9 +22,11 @@ class DebugTableController: UITableViewController {
         self.consoleView.editable = false
         self.consoleView.backgroundColor = UIColor.darkGrayColor()
         self.consoleView.textColor = UIColor.whiteColor()
+        let cellIds : Array<ControlType> = [.Switch,.Slider,.Button,.TextInput,.Label]
+        for type in cellIds {
+            self.tableView.registerNib(UINib(nibName: type.rawValue, bundle: nil), forCellReuseIdentifier:type.rawValue)
+        }
         self.tableView .registerNib(UINib(nibName: CommandCellIdentifier, bundle: nil), forCellReuseIdentifier: CommandCellIdentifier)
-        var info = SectionInfo()
-        self.sectionObjects.append(info)
         self.readCurrentLog()
         self.tableView.tableHeaderView = self.consoleView
     }
